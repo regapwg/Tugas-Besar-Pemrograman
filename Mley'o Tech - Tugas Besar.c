@@ -77,3 +77,4 @@ void pilihanmenu (int input){
 	}
 }
 
+test
