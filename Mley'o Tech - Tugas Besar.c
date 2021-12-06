@@ -1,29 +1,191 @@
-//=======================================================================//
-//***********       	        Library		         ****************//
-//=======================================================================//
+//***********************************************************************//
+//>>>>>>>>>>>>>>       	 Library dan Tipe data           <<<<<<<<<<<<<<<<//
++************************************************************************+
 //                         >> 5 Desember 2021 <<           		 //
 // Nama Library   : stdlib.h                                             //
 // Deskripsi      : berfungsi untuk clearscreen                          //
-//                               			                 //	
 // Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
 //                  (2105551038)                                         //
+//                                                                       //
+//                         >> 5 Desember 2021 <<           		 //
+// 1. Nama Library   : stdbool.h                                         //
+//    Deskripsi      : berfungsi untuk menggunakan tipe data boolean     //
+// 2. Nama Tipe data : Char                                              //
+//    Deskripsi      : berfungsi untuk menggunakan variabel berupa       //
+//                     karakter                                          //
+// 3. Nama Tipe data : Struct dengan variabel user, didalamnya terdapat  //
+//                     variabel char                                     //
+//    Deskripsi      : berfungsi untuk menampung beberapa variabel       //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
 //=======================================================================//
+	
 #include <stdio.h>
 #include <stdlib.h>
 
 
-void judulprogram (void); 
+void judulProgram (void); //fungsi tampilan judul program
 
-void menuUtama (void);
+void header(void); //fungsi untuk menampilkan header program
 
-void menuLaptop (void);
+void menuLogin (void); //fungsi login
 
-void specLaptop1 (void); 
+void menuUtama (void); //fungsi tampilan menu utama
 
-void specLaptop2 (void); 
+void menuLaptop (void); //fungsi tampilan menu laptop
 
-void specLaptop3 (void); 
+void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
 
+void opsiKembali (void); //fungsi opsi kembali 
+
+void specLaptop1 (void); //fungsi menampilkan spec laptop 1
+
+void specLaptop2 (void); //fungsi menampilkan spec laptop 2
+
+void specLaptop3 (void); //fungsi menampilkan spec laptop 3
+
+char username[20]; 
+char password [20];
+
+struct Data{
+    char nama[100];
+    char password[100];
+}user;
+
+FILE*kumpulandata;
+
+
+int main (void){
+	
+	judulProgram();
+	menuLogin();	
+	return (0);
+}
+//=======================================================================//
+//>>>>>>>>>>>    Fungsi Untuk Menggunkan sistem menuLogin     <<<<<<<<<<<//
+//=======================================================================//
+//                         >> 5 Desember 2021 <<           		 //
+// Nama Fungsi    : menuLogin                                            //
+// Deskripsi      : fungsi ini berfungsi untuk melakukan login serta     //
+//                  registrasi akun sebelum masuk ke menu utama          //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
+//                                              			 //
+//=======================================================================//
+void menuLogin(void){
+	awalmenu:
+	system("cls");
+ 
+	
+		bool status;
+		int opsi;
+ 	
+ 				printf("\n\n");
+				printf("\t\t\t\t ++------------------------------------------++\n");
+				printf("\t\t\t\t ||    Welcome to Program Toko Mley'o Tech   ||\n");
+				printf("\t\t\t\t ++------------------------------------------++\n");
+				printf("\t\t\t\t ||                                          ||\n");
+				printf("\t\t\t\t ||             1 | Login                    ||\n");
+				printf("\t\t\t\t ||                                          ||\n");
+				printf("\t\t\t\t ||             2 | Daftar                   ||\n");		
+				printf("\t\t\t\t ||                                          ||\n");
+				printf("\t\t\t\t ++------------------------------------------++\n");	
+				printf("\n");
+				printf("\t\t\t\t >> Input Pilihan : ");
+				scanf("%d", &opsi);
+					switch(opsi){
+						
+							
+						case 1: //log-in setelah membuat akun
+						
+								
+							system("cls");
+							kumpulandata = fopen("user","r+");
+						
+							printf ("\n\n\n"); 
+							printf ("\t\t\t\t |  USERNAME  : ");
+							scanf("%s", &username);
+							printf ("\t\t\t\t +-----------------------+\n");
+							printf ("\t\t\t\t |  PASSWORD  : ");
+							scanf("%s", &password);
+							
+									while(fscanf(kumpulandata,"%s, %s",user.nama,user.password)!=EOF){
+							            if((strcmp(user.nama,username) == 00) && (strcmp(user.password,password)==00)){
+							                status = true;
+							                break;
+					           			}
+				       				}	
+				       				
+						        	if (status) { //jika benar akan masuk ke menu utama
+										menuUtama();
+										getch();
+							            system("cls");
+						        	}
+							    	else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
+							    		
+							            system("cls");
+							            printf("\n");
+							            printf("\t\t\t\t +------------------------------------------+\n");
+										printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+										printf("\t\t\t\t +------------------------------------------+\n");
+										printf("\t\t\t\t |                                          |\n");
+										printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
+										printf("\t\t\t\t |                                          |\n");
+										printf("\t\t\t\t |            enter to continue             |\n");
+										printf("\t\t\t\t |                                          |\n");
+										printf("\t\t\t\t +------------------------------------------+\n");	
+							          	getch();
+							            goto awalmenu;
+							    	} 
+						break;
+						
+						case 2: //untuk melakukan registrasi apabila belum memiliki akun
+							system("cls");
+							kumpulandata=fopen("user","a+");
+							printf ("\n\n\n"); 
+							printf ("\t\t\t\t |  USERNAME  : ");
+							scanf("%s", &user.nama);
+							printf ("\t\t\t\t +--------------------------------------------------+\n");
+							printf ("\t\t\t\t |  PASSWORD  : ");
+							scanf("%s", &user.password);
+							
+							system("cls");
+							printf("\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+							printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t |      !! REGISTRASI TELAH BERHASIL !!     |\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t |            enter to continue             |\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+									
+							fprintf(kumpulandata,"\n%s(username), ",user.nama);
+				            fprintf(kumpulandata,"%s(password)",user.password);
+				            fclose(kumpulandata);
+							getch();
+							system("cls");			
+							goto awalmenu; 
+						break;
+						
+							default :
+								system("cls");
+								printf("\n");
+								printf("\t\t\t\t +------------------------------------------+\n");
+								printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+								printf("\t\t\t\t +------------------------------------------+\n");
+								printf("\t\t\t\t |                                          |\n");
+								printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
+								printf("\t\t\t\t |                                          |\n");
+								printf("\t\t\t\t |              enter to continue           |\n");
+								printf("\t\t\t\t |                                          |\n");
+								printf("\t\t\t\t +------------------------------------------+\n");
+									getch();
+								goto awalmenu;
+						break;
+				    }
+}
 
 int main (void){
 	int input_menu;
@@ -40,7 +202,7 @@ int main (void){
 	return (0);
  }
 //=======================================================================//
-//***********     Fungsi Untuk Menampilkan Judulprogram  ****************//
+//<<<<<<<<<<<<<<    Fungsi Untuk Menampilkan Judulprogram  <<<<<<<<<<<<<<//
 //=======================================================================//
 //                         >> 4 Desember 2021 <<           		 //
 // Nama Fungsi    : judulprogram                                         //
@@ -55,6 +217,7 @@ int main (void){
 //                  Mengganti nama fungsi menjadi judulProgram           //
 // Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
 //=======================================================================//
+
 
 void judulProgram (void){
 	printf("\n\n");
