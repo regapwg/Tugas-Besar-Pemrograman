@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 
@@ -17,13 +18,21 @@ int main (void){
 	 	printf("\t\t\t\t\tMasukan Pilhan Menu Anda :");
 	 	scanf("%d", &input_menu);
 	 	input_program = input_menu;
-	
-	 	
 	 	pilihanmenu (input_program);
 	 	
 	return (0);
  }
-
+//=======================================================================//
+//***********     Fungsi Untuk Menampilkan Judulprogram  ****************//
+//=======================================================================//
+//                         >> 4 Desember 2021 <<           		 //
+// Nama Fungsi    : judulprogram                                         //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan judul program //
+//                  saat program pertama kali di buka                    //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
+//                                              			 //
+//=======================================================================//
 void judulprogram (void){
 	printf("\n\n\t\t\t\t\t##############################################\n");
 	printf("\t\t\t\t\t##        Program Toko  Mley'o Tech         ##\n");
@@ -35,7 +44,16 @@ void judulprogram (void){
 	printf("\t\t\t\t\t##                                          ##\n");
 	printf("\t\t\t\t\t##############################################\n");
 }
-
+//=======================================================================//
+//***********       Fungsi Untuk Menampilkan Menu	 ****************//
+//=======================================================================//
+//                         >> 4 Desember 2021 <<           		 //
+// Nama Fungsi    : menu                                                 //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan menu utama    //
+//                  dalam program ini			                 //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
+//=======================================================================//
 void menu (void){
 	printf("\n\n\t\t\t\t\t##############################################\n");
 	printf("\t\t\t\t\t##             Toko Mley'o Tech             ##\n");
@@ -48,7 +66,16 @@ void menu (void){
 	printf("\t\t\t\t\t##############################################\n");
 	
 }
-
+//=======================================================================//
+//***********       	  Fungsi Pilihan Menu		 ****************//
+//=======================================================================//
+//                         >> 4 Desember 2021 <<           		 //
+// Nama Fungsi    : pilihanmenu                                          //
+// Deskripsi      : fungsi ini berfungsi untuk memilih kondisi menu      //
+//                  dalam program ini			                 //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
+//=======================================================================//
 void pilihanmenu (int input){
 	switch (input){
 		case '1' :
