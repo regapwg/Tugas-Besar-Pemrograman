@@ -1,11 +1,18 @@
-
 #include <stdio.h>
-
+#include <stdlib.h>
 
 
 void judulprogram (void); 
-void menu (void);
-void pilihanmenu (int input);
+
+void menuUtama (void);
+
+void menuLaptop (void);
+
+void specLaptop1 (void); 
+
+void specLaptop2 (void); 
+
+void specLaptop3 (void); 
 
 
 int main (void){
@@ -32,17 +39,28 @@ int main (void){
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
 //                  (2105551005)                                         //
 //                                              			 //
+// Versi : 1.1                                     Rev. 1                //
+//                                                 Tgl: 06-12-2021       //
+// Revisi 1       : Merapikan tampilan menu pada fungsi judulprogram     //
+//                  Mengganti nama fungsi menjadi judulProgram           //
+// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
 //=======================================================================//
-void judulprogram (void){
-	printf("\n\n\t\t\t\t\t##############################################\n");
-	printf("\t\t\t\t\t##        Program Toko  Mley'o Tech         ##\n");
-	printf("\t\t\t\t\t==============================================\n");
-	printf("\t\t\t\t\t##             Dibuat Oleh :                ##\n");
-	printf("\t\t\t\t\t##                                          ##\n");
-	printf("\t\t\t\t\t## - Kadek Rega Prawira Suyoga              ##\n");
-	printf("\t\t\t\t\t## - I Gede Khresna Adi Wedanta Beratha     ##\n");
-	printf("\t\t\t\t\t##                                          ##\n");
-	printf("\t\t\t\t\t##############################################\n");
+
+void judulProgram (void){
+	printf("\n\n");
+	printf("\t\t\t\t +--------------------------------------------+\n");
+	printf("\t\t\t\t |          Program Toko Mley'o Tech          |\n");
+	printf("\t\t\t\t +--------------------------------------------+\n");
+	printf("\t\t\t\t |                                            |\n");
+	printf("\t\t\t\t |               Dibuat Oleh :                |\n");
+	printf("\t\t\t\t |                                            |\n");
+	printf("\t\t\t\t |           Kadek Rega Prawira Suyoga        |\n");
+	printf("\t\t\t\t |      I Gede Khresna Adi Wedanta Beratha    |\n");
+	printf("\t\t\t\t |                                            |\n");
+	printf("\t\t\t\t +--------------------------------------------+\n");
+	printf("\n\n");
+	printf("\t\t\t\t   ++++++++++ **Enter to Continue** +++++++++  \n");
+	getch();
 }
 //=======================================================================//
 //***********       Fungsi Untuk Menampilkan Menu	 ****************//
@@ -53,18 +71,36 @@ void judulprogram (void){
 //                  dalam program ini			                 //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
 //                  (2105551005)                                         //
+//                                              			 //
+// Versi : 1.1                                     Rev. 1                //
+//                                                 Tgl: 06-12-2021       //
+// Revisi 1       : Merapikan tampilan menu pada fungsi menu             //
+//                  Mengganti nama fungsi menjadi menuUtama              //
+// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
 //=======================================================================//
-void menu (void){
-	printf("\n\n\t\t\t\t\t##############################################\n");
-	printf("\t\t\t\t\t##             Toko Mley'o Tech             ##\n");
-	printf("\t\t\t\t\t##==========================================##\n");
-	printf("\t\t\t\t\t##                                          ##\n");
-	printf("\t\t\t\t\t## 1 Laptop                                 ##\n");
-	printf("\t\t\t\t\t## 2 Keyboard                               ##\n");
-	printf("\t\t\t\t\t## 3 Voucher Game                           ##\n");
-	printf("\t\t\t\t\t##                                          ##\n");
-	printf("\t\t\t\t\t##############################################\n");
-	
+
+void menuUtama (void){
+	menuUtama:
+	system("cls");
+	printf("\n\n");
+	header();
+	int menuUtama;
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  [1] DAFTAR LAPTOP                               ||\n");
+	printf("\t\t\t\t ||  [2] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); // Memilih Jasa yang diinginkan
+	scanf("%d", &menuUtama);
+	//memilih menu
+		if(menuUtama==1){
+			menuLaptop();
+		}
 }
 //=======================================================================//
 //***********       	  Fungsi Pilihan Menu		 ****************//
@@ -75,32 +111,153 @@ void menu (void){
 //                  dalam program ini			                 //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
 //                  (2105551005)                                         //
+//                                              			 //
+// Versi : 1.1                                     Rev. 1                //
+//                                                 Tgl: 06-12-2021       //
+// Revisi 1       : Merapikan tampilan menu pada fungsi pilihanmenu      //
+//                  Mengganti nama fungsi menjadi menuLaptop             //
+// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
 //=======================================================================//
-void pilihanmenu (int input){
-	switch (input){
-		case '1' :
+
+void menuLaptop (void){
+	menuAwal:;
 		
-			printf("- ASUS\n");
-			printf("- Macbook\n");
-			printf("- ROG\n");
-			break;
-			
-		case '2' :	
+	int i, unit, menuLaptop[100];
+	char pilihan, jumlah[100];
 	
-			printf("- Razer BlackWidow Chroma\n");
-			printf("- Cougar Attack X3\n");
-			printf("- Digital Alliance K1\n");
-		break;
-			
-		case '3' :
+	system("cls");
+	printf("\n\n");
+	header();
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
+	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
+	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  [Y]  Pemesanan                                  ||\n");
+	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  >> ingin memesan? : ");
+	scanf("%s", &pilihan);
+	
+	if (pilihan == 'y'|| pilihan =='Y'){
 		
-			printf("Voucher PB\n");
-			break;
-			
-		default:
-			printf("Data Yang Anda Masukan Salah \n");
-		break;
-				
+		printf("\t\t\t\t ||  >> Ingin pesan berapa unit Laptop? : ");
+		scanf("%d", &unit);
+	
+		for(i=1; i<=unit; i++){  
+			printf("\n\n");               //perulangan dalam memilih unit Laptop
+			printf("\t\t\t\t >> Pilih Laptop ke-%i   : " , i);
+			scanf("%i", &menuLaptop[i]);
+	
+			printf("\n");
+		
+			if (menuLaptop[i]==1){
+				printf("\t\t\t\t >> Macbook Air 2020 \n");
+			}
+			else if(menuLaptop[i]==2){
+				printf("\t\t\t\t >> Macbook Pro M1 \n");
+			}
+			else if(menuLaptop[i]==3){
+				printf("\t\t\t\t >> ASUS TUF Gaming F15 \n");
+			}
+			else{
+	   		goto menuAwal;
+			}
+		}
 	}
+	else if (pilihan=='t'||pilihan=='T'){
+		menuUtama();
+		getch();
+	}		
 }
 
+//=======================================================================//
+//***********       	  Fungsi Spec Laptop		 ****************//
+//=======================================================================//
+//                         >> 5 Desember 2021 <<           		 //
+// Nama Fungsi    : specLaptop1, specLaptop2, specLaptop3                //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  suatu tipe laptop			                 //	
+// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
+//                  (2105551038)                                         //
+//=======================================================================//
+
+void specLaptop1 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                    ** MACBOOK AIR 2020 **                                           |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar                                                                                         |\n");
+	printf ("\t |       13,3 inci pada resolusi 2560 x 1600, dengan teknologi true tone dan kecerahan 400 nits.       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Chip Apple M1                                                                                 |\n");
+	printf ("\t |       CPU 8 Core dan Neural Engine 16 Core                                                          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8 GB memori (expandable up to 16 GB), SSD 256/512 GB (expandable up to 2 TB)                  |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Mac OS                                                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Paket Pembelian                                                                               |\n");
+	printf ("\t |       >> 1 unit Macbook Air                                                                         |\n");
+	printf ("\t |       >> Adaptor Daya USB-C 30W                                                                     |\n");
+	printf ("\t |       >> Kabel Pengisi Daya USB-C (2m)                                                              |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+void specLaptop2 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                    ** MACBOOK PRO M1 **                                             |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar                                                                                         |\n");
+	printf ("\t |       13,3 inci pada resolusi 2560 x 1600, dengan teknologi true tone dan kecerahan 500 nits.       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Chip Apple M1                                                                                 |\n");
+	printf ("\t |       CPU 8 Core dan Neural Engine 16 Core                                                          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8 GB memori (expandable up to 16 GB), SSD 256 (expandable up to 2 TB)                         |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Mac OS                                                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Paket Pembelian                                                                               |\n");
+	printf ("\t |       >> 1 unit Macbook Pro 13 inci                                                                 |\n");
+	printf ("\t |       >> Adaptor Daya USB-C 61W                                                                     |\n");
+	printf ("\t |       >> Kabel Pengisi Daya USB-C (2m)                                                              |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+void specLaptop3 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                   ** ASUS TUF GAMING F15 **                                         |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
+	printf ("\t |       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz         |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Prosesor Intel® Core™ i7-10750H Processor 2.6 GHz                                             |\n");
+	printf ("\t |       12M Cache, up to 5.0 GHz, 6 cores                                                             |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8GB DDR4 SO-DIMM (expandable up to 32 GB), 512GB M.2 NVMe™ PCIe® 3.0 SSD                      |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       NVIDIA® GeForce® GTX 1660Ti, 6GB GDDR6                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
