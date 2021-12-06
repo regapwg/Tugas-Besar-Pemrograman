@@ -80,3 +80,4 @@ void pilihanmenu (int input){
 
 halo reg
 ngantuk
+sama
