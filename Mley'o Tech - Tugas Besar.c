@@ -19,6 +19,7 @@
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
 //                  (2105551005)                                         //
 //=======================================================================//
+
 #include <stdio.h>     // library menu utama 
 #include <stdlib.h>   // Library System Clearscreen
 #include <stdbool.h> // library untuk tipe data boolean
@@ -70,6 +71,7 @@ FILE*kumpulandata; //pointer untuk mengakses file
 //                  dan menuLogin(); saja                                //
 // Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
 //=======================================================================//
+
 int main (void){
 	
 	judulProgram();
@@ -134,13 +136,13 @@ void header (void){
 //=======================================================================//
 //>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem menuLogin    <<<<<<<<<<<//
 //=======================================================================//
-//                         >> 5 Desember 2021 <<           		         //
+//                         >> 5 Desember 2021 <<           	         //
 // Nama Fungsi    : menuLogin                                            //
 // Deskripsi      : fungsi ini berfungsi untuk melakukan login serta     //
 //                  registrasi akun sebelum masuk ke menu utama          //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
 //                  (2105551005)                                         //
-//                                              			             //
+//                                              		         //
 //=======================================================================//
 void menuLogin(void){
 	awalmenu:
