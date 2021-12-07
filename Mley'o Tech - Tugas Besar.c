@@ -43,21 +43,41 @@ void specLaptop2 (void);
 
 void specLaptop3 (void); 
 
+char username[20]; 
+char password [20];
 
+struct Data{
+    char nama[100];
+    char password[100];
+}user;
+
+FILE*kumpulandata; //pointer untuk mengakses file
+
+//=======================================================================//
+//>>>>>>>>>>>                     Program Utama               <<<<<<<<<<<//
+//=======================================================================//
+//                         >> 4 Desember 2021 <<          	         //
+// Nama 	      : int main (void)                                  //
+// Deskripsi      : program utama berisikan beberapa fungsi yang akan    //
+//                  dijalankan, diantaranya judulprogram (); menu();     //	
+//                  serta pilihanmenu (input_program);                   //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga  - 2105551005              //
+//                                                                       //
+//                                             		                 //
+// Versi : 1.1                                     Rev. 1                //
+//                                                 Tgl: 05-12-2021       //
+// Revisi 1       : Merubah isi fungsi yang digunakan hanya judulProgram //
+//                  dan menuLogin(); saja                                //
+// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
+//=======================================================================//
 int main (void){
-	int input_menu;
-	char input_program;
 	
-	 	judulprogram ();
-	 	menu();
-	 	
-	 	printf("\t\t\t\t\tMasukan Pilhan Menu Anda :");
-	 	scanf("%d", &input_menu);
-	 	input_program = input_menu;
-	 	pilihanmenu (input_program);
+	judulProgram();
+	menuLogin();
 	 	
 	return (0);
  }
+ 
 //=======================================================================//
 //***********     Fungsi Untuk Menampilkan Judulprogram  ****************//
 //=======================================================================//
@@ -91,6 +111,152 @@ void judulProgram (void){
 	printf("\t\t\t\t   ++++++++++ **Enter to Continue** +++++++++  \n");
 	getch();
 }
+
+//=======================================================================//
+//>>>>>>>>>>>         Fungsi Untuk Menggunkan header          <<<<<<<<<<<//
+//=======================================================================//
+//                         >> 6 Desember 2021 <<           		         //
+// Nama Fungsi    : header                                               //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan header di     //
+//                  setiap menu yang di tampilkan                        //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
+//                                              	                 //
+//=======================================================================//
+void header (void){
+	printf("\t\t\t\t                      Mley'o Tech                      \n");
+	printf("\t\t\t\t         Jl. Disana GG. Disini No.666, Denpasar        \n");
+	printf("\t\t\t\t                     +62 81246810121                   \n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\n");
+}
+
+//=======================================================================//
+//>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem menuLogin    <<<<<<<<<<<//
+//=======================================================================//
+//                         >> 5 Desember 2021 <<           		         //
+// Nama Fungsi    : menuLogin                                            //
+// Deskripsi      : fungsi ini berfungsi untuk melakukan login serta     //
+//                  registrasi akun sebelum masuk ke menu utama          //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
+//                                              			             //
+//=======================================================================//
+void menuLogin(void){
+	awalmenu:
+	system("cls");
+ 
+	
+		bool status;
+		int opsi;
+ 	
+ 				printf("\n\n");
+				printf("\t\t\t\t ++------------------------------------------++\n");
+				printf("\t\t\t\t ||    Welcome to Program Toko Mley'o Tech   ||\n");
+				printf("\t\t\t\t ++------------------------------------------++\n");
+				printf("\t\t\t\t ||                                          ||\n");
+				printf("\t\t\t\t ||             1 | Login                    ||\n");
+				printf("\t\t\t\t ||                                          ||\n");
+				printf("\t\t\t\t ||             2 | Daftar                   ||\n");		
+				printf("\t\t\t\t ||                                          ||\n");
+				printf("\t\t\t\t ++------------------------------------------++\n");	
+				printf("\n");
+				printf("\t\t\t\t >> Input Pilihan : ");
+				scanf("%d", &opsi);
+					switch(opsi){
+						
+							
+						case 1: //log-in setelah membuat akun
+						
+								
+							system("cls");
+							kumpulandata = fopen("user","r+");
+						
+							printf ("\n\n\n"); 
+							printf ("\t\t\t\t |  USERNAME  : ");
+							scanf("%s", &username);
+							printf ("\t\t\t\t +-----------------------+\n");
+							printf ("\t\t\t\t |  PASSWORD  : ");
+							scanf("%s", &password);
+							
+									while(fscanf(kumpulandata,"%s, %s",user.nama,user.password)!=EOF){
+							            if((strcmp(user.nama,username) == 00) && (strcmp(user.password,password)==00)){
+							                status = true;
+							                break;
+					           			}
+				       				}	
+				       				
+						        	if (status) { //jika benar akan masuk ke menu utama
+										menuUtama();
+										getch();
+							            system("cls");
+						        	}
+							    	else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
+							    		
+							            system("cls");
+							            printf("\n");
+							            printf("\t\t\t\t +------------------------------------------+\n");
+										printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+										printf("\t\t\t\t +------------------------------------------+\n");
+										printf("\t\t\t\t |                                          |\n");
+										printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
+										printf("\t\t\t\t |                                          |\n");
+										printf("\t\t\t\t |            enter to continue             |\n");
+										printf("\t\t\t\t |                                          |\n");
+										printf("\t\t\t\t +------------------------------------------+\n");	
+							          	getch();
+							            goto awalmenu;
+							    	} 
+						break;
+						
+						case 2: //untuk melakukan registrasi apabila belum memiliki akun
+							system("cls");
+							kumpulandata=fopen("user","a+"); //membuka file
+							printf ("\n\n\n"); 
+							printf ("\t\t\t\t |  USERNAME  : ");
+							scanf("%s", &user.nama);
+							printf ("\t\t\t\t +--------------------------------------------------+\n");
+							printf ("\t\t\t\t |  PASSWORD  : ");
+							scanf("%s", &user.password);
+							
+							system("cls");
+							printf("\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+							printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t |      !! REGISTRASI TELAH BERHASIL !!     |\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t |            enter to continue             |\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+									
+							fprintf(kumpulandata,"\n%s(username), ",user.nama); //menyimpan data ke file
+				            fprintf(kumpulandata,"%s(password)",user.password);
+				            fclose(kumpulandata);
+							getch();
+							system("cls");			
+							goto awalmenu; 
+						break;
+						
+						default :
+							system("cls");
+							printf("\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+							printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t |              enter to continue           |\n");
+							printf("\t\t\t\t |                                          |\n");
+							printf("\t\t\t\t +------------------------------------------+\n");
+								getch();
+								goto awalmenu;
+						break;
+				    }
+}
+
 //=======================================================================//
 //***********       Fungsi Untuk Menampilkan Menu	 ****************//
 //=======================================================================//
@@ -203,6 +369,77 @@ void menuLaptop (void){
 		getch();
 	}		
 }
+
+//=======================================================================//
+//***********       	  Fungsi List Spesifikasi	     ****************//
+//=======================================================================//
+//                         >> 6 Desember 2021 <<           	         	 //
+// Nama Fungsi    : listSpesifikasi                                      //
+// Deskripsi      : berfungsi untuk menampilkan menu list laptop         //
+//                  yang digunakan untuk melihat spesifikasi laptop      //	
+// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
+//                  (2105551038)                                         //
+//=======================================================================//
+void listSpesifikasi (void){
+	menuSpec:;
+	
+	int unit;
+	char pilihan;
+	
+	system("cls");
+	printf("\n\n");
+	header();
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
+	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
+	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  [Y]  Melihat Spesifikasi                        ||\n");
+	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  >> Cek spesifikasi? : ");
+	scanf("%s", &pilihan);
+	
+	if (pilihan == 'y'|| pilihan =='Y'){
+		
+		printf("\t\t\t\t ||  >> Silahkan pilih Laptop yang diinginkan  : ");
+		scanf("%d", &unit);
+		printf("\t\t\t\t ++--------------------------------------------------++\n");
+			if (unit==1){
+				system("cls");
+				specLaptop1 ();
+				opsiKembali ();
+			}
+			else if(unit==2){
+				system("cls");
+				specLaptop2 ();
+				opsiKembali ();
+			}
+			else if(unit==3){
+				system("cls");
+				specLaptop3 ();
+				opsiKembali ();	
+			}
+			else{
+				printf("\t\t\t\t         Input salah, Masukkan Input yang Benar!    \n");	
+				printf("\t\t\t\t                   Enter untuk Coba Lagi         \n");	
+				getch();
+				goto menuSpec;
+			}
+		}
+		
+
+	else if (pilihan=='t'||pilihan=='T'){
+		menuUtama();
+		getch();
+	}		
+}
+
+
 
 //=======================================================================//
 //***********       	  Fungsi Spec Laptop		 ****************//
