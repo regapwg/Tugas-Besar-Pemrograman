@@ -439,7 +439,33 @@ void listSpesifikasi (void){
 	}		
 }
 
+//=======================================================================//
+//>>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		  <<<<<<<<<<<<<<<//
+//=======================================================================//
+//                         >> 6 Desember 2021 <<           		 //
+// Nama Fungsi    : opsiKembali                                          //
+// Deskripsi      : berfungsi untuk menampilkan pilihan kembali atau     //
+//                  lanjut ke pemesanan			                 //	
+// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
+//                  (2105551038)                                         //
+//=======================================================================//
 
+void opsiKembali (void){
+	char opsi;
+	
+	printf ("\n\n");
+	printf("\t\t\t\t >> [Y] Cek Spesifikasi lain \n");
+	printf("\t\t\t\t >> [P] Pesan Sekarang \n\n");
+	printf("\t\t\t\t >> Masukkan Pilihan : ");
+	scanf("%s", &opsi);
+				
+	if (opsi == 'y' || opsi=='Y'){
+		listSpesifikasi();
+	}
+	else if (opsi == 'p' || opsi=='P') {
+		menuLaptop();
+	}   
+}	
 
 //=======================================================================//
 //>>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		  <<<<<<<<<<<<<<<//
