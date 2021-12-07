@@ -1,22 +1,41 @@
-//=======================================================================//
-//***********       	        Library		         ****************//
-//=======================================================================//
-//                         >> 5 Desember 2021 <<           		 //
+//***********************************************************************//
+//>>>>>>>>>>>>>>       	 Library dan Tipe data           <<<<<<<<<<<<<<<<//
+//***********************************************************************//
+//                         >> 5 Desember 2021 <<                         //
 // Nama Library   : stdlib.h                                             //
 // Deskripsi      : berfungsi untuk clearscreen                          //
-//                               			                 //	
 // Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
 //                  (2105551038)                                         //
+//                                                                       //
+//                         >> 5 Desember 2021 <<                         //
+// 1. Nama Library   : stdbool.h                                         //
+//    Deskripsi      : berfungsi untuk menggunakan tipe data boolean     //
+// 2. Nama Tipe data : Char                                              //
+//    Deskripsi      : berfungsi untuk menggunakan variabel berupa       //
+//                     karakter                                          //
+// 3. Nama Tipe data : Struct dengan variabel user, didalamnya terdapat  //
+//                     variabel char                                     //
+//    Deskripsi      : berfungsi untuk menampung beberapa variabel       //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
+//                  (2105551005)                                         //
 //=======================================================================//
-#include <stdio.h>
-#include <stdlib.h>
-
+#include <stdio.h>     // library menu utama 
+#include <stdlib.h>   // Library System Clearscreen
+#include <stdbool.h> // library untuk tipe data boolean
 
 void judulprogram (void); 
+
+void header(void); //fungsi untuk menampilkan header program
+
+void menuLogin (void); //fungsi login
 
 void menuUtama (void);
 
 void menuLaptop (void);
+
+void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
+
+void opsiKembali (void); //fungsi opsi kembali 
 
 void specLaptop1 (void); 
 
