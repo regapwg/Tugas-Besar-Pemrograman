@@ -78,9 +78,9 @@ int main (void){
 	return (0);
  }
  
-//=======================================================================//
-//***********     Fungsi Untuk Menampilkan Judulprogram  ****************//
-//=======================================================================//
+//***********************************************************************//
+//>>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Judulprogram    <<<<<<<<<<<<<<//
+//***********************************************************************//
 //                         >> 4 Desember 2021 <<           		 //
 // Nama Fungsi    : judulprogram                                         //
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan judul program //
@@ -258,7 +258,7 @@ void menuLogin(void){
 }
 
 //=======================================================================//
-//***********       Fungsi Untuk Menampilkan Menu	 ****************//
+//>>>>>>>>>>>>>>>      Fungsi Untuk Menampilkan Menu	  <<<<<<<<<<<<<<<//
 //=======================================================================//
 //                         >> 4 Desember 2021 <<           		 //
 // Nama Fungsi    : menu                                                 //
@@ -298,7 +298,7 @@ void menuUtama (void){
 		}
 }
 //=======================================================================//
-//***********       	  Fungsi Pilihan Menu		 ****************//
+//>>>>>>>>>>>>>>>      	     Fungsi Pilihan Menu	  <<<<<<<<<<<<<<<//
 //=======================================================================//
 //                         >> 4 Desember 2021 <<           		 //
 // Nama Fungsi    : pilihanmenu                                          //
@@ -371,9 +371,9 @@ void menuLaptop (void){
 }
 
 //=======================================================================//
-//***********       	  Fungsi List Spesifikasi	     ****************//
+//>>>>>>>>>>>>>>>      	  Fungsi List Spesifikasi	  <<<<<<<<<<<<<<<//
 //=======================================================================//
-//                         >> 6 Desember 2021 <<           	         	 //
+//                         >> 6 Desember 2021 <<           	         //
 // Nama Fungsi    : listSpesifikasi                                      //
 // Deskripsi      : berfungsi untuk menampilkan menu list laptop         //
 //                  yang digunakan untuk melihat spesifikasi laptop      //	
@@ -442,7 +442,7 @@ void listSpesifikasi (void){
 
 
 //=======================================================================//
-//***********       	  Fungsi Spec Laptop		 ****************//
+//>>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		  <<<<<<<<<<<<<<<//
 //=======================================================================//
 //                         >> 5 Desember 2021 <<           		 //
 // Nama Fungsi    : specLaptop1, specLaptop2, specLaptop3                //
