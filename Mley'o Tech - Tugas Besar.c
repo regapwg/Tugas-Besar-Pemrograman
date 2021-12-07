@@ -24,25 +24,25 @@
 #include <stdlib.h>   // Library System Clearscreen
 #include <stdbool.h> // library untuk tipe data boolean
 
-void judulprogram (void); 
+void judulprogram (void); //fungsi tampilan judul program
 
 void header(void); //fungsi untuk menampilkan header program
 
 void menuLogin (void); //fungsi login
 
-void menuUtama (void);
+void menuUtama (void); //fungsi tampilan menu utama
 
-void menuLaptop (void);
+void menuLaptop (void); //fungsi tampilan menu laptop
 
 void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
 
 void opsiKembali (void); //fungsi opsi kembali 
 
-void specLaptop1 (void); 
+void specLaptop1 (void); //fungsi menampilkan spec laptop 1
 
-void specLaptop2 (void); 
+void specLaptop2 (void); //fungsi menampilkan spec laptop 2
 
-void specLaptop3 (void); 
+void specLaptop3 (void); //fungsi menampilkan spec laptop 3
 
 char username[20]; 
 char password [20];
