@@ -208,7 +208,7 @@ void menuLogin(void){
 							printf ("\t\t\t\t |  PASSWORD  : ");
 							scanf("%s", &password);
 							
-									while(fscanf(kumpulandata,"%s, %s",user.nama,user.password)!=EOF){
+								while(fscanf(kumpulandata,"\n%s\n%s",user.nama,user.password)!=EOF){
 							            if((strcmp(user.nama,username) == 00) && (strcmp(user.password,password)==00)){
 							                status = true;
 							                break;
@@ -260,9 +260,9 @@ void menuLogin(void){
 							printf("\t\t\t\t |                                          |\n");
 							printf("\t\t\t\t +------------------------------------------+\n");
 									
-							fprintf(kumpulandata,"\n%s(username), ",user.nama); //menyimpan data ke file
-				            fprintf(kumpulandata,"%s(password)",user.password);
-				            fclose(kumpulandata);
+							fprintf(kumpulandata,"\n%s",user.nama); //menyimpan data ke file
+				           		fprintf(kumpulandata,"\n%s",user.password);
+				           		fclose(kumpulandata);					
 							getch();
 							system("cls");			
 							goto awalmenu; 
