@@ -155,7 +155,7 @@ void header (void){
 	printf("\t\t\t\t                     +62 81246810121                   \n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t %i/%i/%i", waktu.tanggal, waktu.bulan, waktu.tahun );
-	printf("\t\t\t\t       %i:%i:%02i", waktu.jam, waktu.menit, waktu.detik );
+	printf("\t\t\t\t       %02i:%i:%02i", waktu.jam, waktu.menit, waktu.detik );
 	printf("\n\n");
 }
 
