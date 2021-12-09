@@ -2,10 +2,9 @@
 //>>>>>>>>>>>>>>       	 Library dan Tipe data           <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 5 Desember 2021 <<                         //
-// Nama Library   : stdlib.h                                             //
-// Deskripsi      : berfungsi untuk clearscreen                          //
-// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
-//                  (2105551038)                                         //
+// Nama Library      : stdlib.h                                          //
+// Deskripsi         : berfungsi untuk clearscreen                       //
+// Dibuat Oleh       : I Gede Khresna Adi Wedanta Beratha - 2105551038   //
 //                                                                       //
 //                         >> 5 Desember 2021 <<           	         //
 // 1. Nama Library   : stdbool.h                                         //
@@ -16,7 +15,7 @@
 // 3. Nama Tipe data : Struct dengan variabel user, didalamnya terdapat  //
 //                     variabel char                                     //
 //    Deskripsi      : berfungsi untuk menampung beberapa variabel       //
-// 	  Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005        //
+//    Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005            //
 //                                                                       //
 //-----------------------------------------------------------------------//
 
@@ -58,7 +57,7 @@ FILE*kumpulandata; //pointer untuk mengakses file
 //>>>>>>>>>>>                   Program Utama                 <<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 4 Desember 2021 <<           		 //
-// Nama 	      : int main (void)                                  //
+// Nama 	  : int main (void)                                      //
 // Deskripsi      : program utama berisikan beberapa fungsi yang akan    //
 //                  dijalankan, diantaranya judulprogram (); menu();     //	
 //                  serta pilihanmenu (input_program);                   //	
@@ -68,7 +67,7 @@ FILE*kumpulandata; //pointer untuk mengakses file
 //                         >> 5 Desember 2021 <<           	         //
 // Revisi 1       : Merubah isi fungsi yang digunakan hanya judulProgram //
 //                  dan menuLogin(); saja                                //
-// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 
 int main (void){
@@ -92,7 +91,7 @@ int main (void){
 //                         >> 6 Desember 2021 <<           		 //
 // Revisi 1       : Merapikan tampilan menu pada fungsi judulprogram     //
 //                  Mengganti nama fungsi menjadi judulProgram           //
-// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 
 void judulProgram (void){
@@ -119,8 +118,7 @@ void judulProgram (void){
 // Nama Fungsi    : header                                               //
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan header di     //
 //                  setiap menu yang di tampilkan                        //	
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
-//                  (2105551005)                                         //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
 //                         >> 9 Desember 2021 <<           		 //
 // Revisi 1       : Menambahkan sistem waktu dan tanggal otomatis yang   //
@@ -165,7 +163,6 @@ void header (void){
 //                  registrasi akun sebelum masuk ke menu utama          //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
-//                                              			 //
 //-----------------------------------------------------------------------//
 void menuLogin(void){
 	awalmenu:
@@ -282,22 +279,21 @@ void menuLogin(void){
 				    }
 }
 
-//=======================================================================//
-//>>>>>>>>>>>>>>>      Fungsi Untuk Menampilkan Menu	  <<<<<<<<<<<<<<<//
-//=======================================================================//
-//                         >> 4 Desember 2021 <<           		 //
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>        Fungsi Untuk Menampilkan Menu	    <<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 4 Desember 2021 <<           	         //
 // Nama Fungsi    : menu                                                 //
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan menu utama    //
 //                  dalam program ini			                 //	
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
-//                  (2105551005)                                         //
-//                                              			 //
-// Versi : 1.1                                     Rev. 1                //
-//                                                 Tgl: 06-12-2021       //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//                                                                       //
+//                                              		         //
+//                         >> 6 Desember 2021 <<                         //
 // Revisi 1       : Merapikan tampilan menu pada fungsi menu             //
 //                  Mengganti nama fungsi menjadi menuUtama              //
-// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
-//=======================================================================//
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
 
 void menuUtama (void){
 	menuUtama:
@@ -322,28 +318,37 @@ void menuUtama (void){
 			menuLaptop();
 		}
 }
-//=======================================================================//
-//>>>>>>>>>>>>>>>      	     Fungsi Pilihan Menu	  <<<<<<<<<<<<<<<//
-//=======================================================================//
-//                         >> 4 Desember 2021 <<           		 //
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>       	     Fungsi Pilihan Menu	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 4 Desember 2021 <<           	         //
 // Nama Fungsi    : pilihanmenu                                          //
 // Deskripsi      : fungsi ini berfungsi untuk memilih kondisi menu      //
 //                  dalam program ini			                 //	
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
-//                  (2105551005)                                         //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
 //                                              			 //
-// Versi : 1.1                                     Rev. 1                //
-//                                                 Tgl: 06-12-2021       //
+//                         >> 6 Desember 2021 <<                         //
 // Revisi 1       : Merapikan tampilan menu pada fungsi pilihanmenu      //
 //                  Mengganti nama fungsi menjadi menuLaptop             //
-// Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
-//=======================================================================//
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//							                 //
+//                         >> 9 Desember 2021 <<                         //
+// Revisi 2       : Merapikan tampilan menu pada fungsi menuLaptop       //
+//                  menambahkan menu lanjutan ke pembayaran              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//									 //
+// Revisi 3       : Merapikan tampilan menu pada data diri pembeli       //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//-----------------------------------------------------------------------//
 
 void menuLaptop (void){
 	menuAwal:;
 		
-	int i, unit, menuLaptop[100];
-	char pilihan, jumlah[100];
+	const char * namaLaptop[100][25];
+		
+	int data, unit, menuLaptop[100], harga[100], totalTagihan = 0;
+	char pilihan, pesan, jumlah [100];
 	
 	system("cls");
 	printf("\n\n");
@@ -367,26 +372,101 @@ void menuLaptop (void){
 		
 		printf("\t\t\t\t ||  >> Ingin pesan berapa unit Laptop? : ");
 		scanf("%d", &unit);
+		printf("\t\t\t\t ++--------------------------------------------------++\n\n");
 	
 		for(i=1; i<=unit; i++){  
 			printf("\n\n");               //perulangan dalam memilih unit Laptop
 			printf("\t\t\t\t >> Pilih Laptop ke-%i   : " , i);
 			scanf("%i", &menuLaptop[i]);
+			printf("\t\t\t\t >> Jumlah Unit         : " , data);
+			scanf("%i", &jumlah[data]);
+			printf("\n");
 	
 			printf("\n");
 		
 			if (menuLaptop[i]==1){
-				printf("\t\t\t\t >> Macbook Air 2020 \n");
+				harga[data]= 16500000;
+				namaLaptop[data][data]= "Macbook Air 2020";
 			}
 			else if(menuLaptop[i]==2){
-				printf("\t\t\t\t >> Macbook Pro M1 \n");
+				harga[data]= 20900000;
+				namaLaptop[data][data]= "Macbook Pro M1";
 			}
 			else if(menuLaptop[i]==3){
-				printf("\t\t\t\t >> ASUS TUF Gaming F15 \n");
+				harga[data]= 18500000;
+				namaLaptop[data][data]= "ASUS TUF Gaming F15";
 			}
 			else{
-	   		goto menuAwal;
+	   			printf ("\t\t\t\t >> Masukan Pilihan Yang Sesuai! << ");
+				getch();
+	   			goto menuAwal;
 			}
+		}
+	}
+	
+	for(data=1; data<=unit; data++){
+	harga[data] = harga[data] * jumlah[data];
+	totalTagihan = totalTagihan + harga[data];
+	}
+	
+ 		system("cls");
+		printf("\n\n");
+		header();
+		printf("\n");
+		printf("\t\t\t   -----------------------------------------------------------------\n");
+		for(data=1; data<=unit; data++){
+			printf("\t\t\t   >> Nama Unit         : %s\n",namaLaptop[data][data]);
+			printf("\t\t\t   >> Jumlah            : %i\n",jumlah[data]);
+			printf("\t\t\t   >> Total Harga       : Rp.%d\n",harga[data]);
+			printf("\t\t\t   -----------------------------------------------------------------\n");				
+		} 
+				
+			
+		printf("\n");
+		printf("\t\t\t   TOTAL TAGIHAN : Rp.%d  ||  ", totalTagihan);
+		printf("Teruskan Pemesanan? (y/n) : ");
+		getchar();
+		pesan = getchar();
+		printf("\t\t\t   -----------------------------------------------------------------\n\n");	
+			 
+		checkout:;
+		char namaCustomer[100] ;
+		char HP[20];
+		char alamat[50];
+
+		if(pesan == 'y'||pesan == 'Y'){                                             
+			system("cls");
+			printf("\n\n");
+			header();
+			printf("\n");
+			printf("\t\t\t   -----------------------------------------------------------------\n");	
+			printf("\t\t\t                      Silahkan Isi Data Diri Anda\n\n");
+			printf("\t\t\t   >> Nama          : "); fflush(stdin);
+			gets(namaCustomer);
+			printf("\t\t\t   >> No Telepon    : "); fflush(stdin);
+			gets(HP);
+			printf("\t\t\t   >> Alamat        : "); fflush(stdin);
+			gets(alamat);
+			printf("\t\t\t   -----------------------------------------------------------------\n\n");
+			printf("\t\t\t                     >> Data Berhasil Tersimpan <<\n\n");
+			printf("\t\t\t   Silahkan Lakukan Pembayaran Melalui Salah Satu Rekening Berikut : \n");
+			printf("\t\t\t   CIMB Niaga     : 2105551038\n");
+			printf("\t\t\t   Bank Syariah   : 2105551005\n");
+			printf("\t\t\t   BCA            : 2105551038\n");
+			printf("\t\t\t   DANA           : 2105551005\n");
+			    	
+			    
+			getchar();
+			menuUtama();
+		}
+			 
+		else if(pesan == 'n'||pesan == 'N'){
+			goto menuAwal;
+		}
+		else{
+			printf("\t\t\t\t         Input salah, Masukkan Input yang Benar!    \n");	
+			printf("\t\t\t\t                   Enter untuk Coba Lagi         \n");
+			goto checkout;
 		}
 	}
 	else if (pilihan=='t'||pilihan=='T'){
@@ -395,16 +475,16 @@ void menuLaptop (void){
 	}		
 }
 
-//=======================================================================//
-//>>>>>>>>>>>>>>>      	  Fungsi List Spesifikasi	  <<<<<<<<<<<<<<<//
-//=======================================================================//
-//                         >> 6 Desember 2021 <<           	         //
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	  Fungsi List Spesifikasi	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           	   	 //
 // Nama Fungsi    : listSpesifikasi                                      //
 // Deskripsi      : berfungsi untuk menampilkan menu list laptop         //
 //                  yang digunakan untuk melihat spesifikasi laptop      //	
-// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
-//                  (2105551038)                                         //
-//=======================================================================//
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
 void listSpesifikasi (void){
 	menuSpec:;
 	
@@ -464,16 +544,17 @@ void listSpesifikasi (void){
 	}		
 }
 
-//=======================================================================//
-//>>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		  <<<<<<<<<<<<<<<//
-//=======================================================================//
-//                         >> 6 Desember 2021 <<           		 //
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>            Fungsi Untuk Opsi Kembali            <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           	         //
 // Nama Fungsi    : opsiKembali                                          //
-// Deskripsi      : berfungsi untuk menampilkan pilihan kembali atau     //
-//                  lanjut ke pemesanan			                 //	
-// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
-//                  (2105551038)                                         //
-//=======================================================================//
+// Deskripsi      : fungsi ini berfungsi untuk memilih opsi kembali ke   //
+//                  menu sebelumnya ataupun menu utama yang digunakan    //	
+//                  di setiap menu                                       //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                              		         //
+//-----------------------------------------------------------------------//
 
 void opsiKembali (void){
 	char opsi;
@@ -492,16 +573,16 @@ void opsiKembali (void){
 	}   
 }	
 
-//=======================================================================//
-//>>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		  <<<<<<<<<<<<<<<//
-//=======================================================================//
-//                         >> 5 Desember 2021 <<           		 //
-// Nama Fungsi    : specLaptop1, specLaptop2, specLaptop3                //
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>      	    Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop1                                          //
 // Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
-//                  suatu tipe laptop			                 //	
-// Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
-//                  (2105551038)                                         //
-//=======================================================================//
+//                  tipe laptop MACBOOK AIR 2020	                 //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
 
 void specLaptop1 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
@@ -529,6 +610,16 @@ void specLaptop1 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 }
 
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           	     	 //
+// Nama Fungsi    : specLaptop2                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	MACBOOK PRO M1                           //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
 void specLaptop2 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t |                                                                                                     |\n");
@@ -555,6 +646,16 @@ void specLaptop2 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 }
 
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop3                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	ASUS TUF GAMING F15                      //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
 void specLaptop3 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t |                                                                                                     |\n");
