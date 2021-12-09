@@ -17,11 +17,16 @@
 //    Deskripsi      : berfungsi untuk menampung beberapa variabel       //
 //    Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005            //
 //                                                                       //
+//                         >> 10 Desember 2021 <<           	         //
+// 1. Nama Library   : time.h                                            //
+//    Deskripsi      : berfungsi untuk menggunakan waktu sistem          //
+//                                                                       //
 //-----------------------------------------------------------------------//
 
 #include <stdio.h>     // library menu utama 
 #include <stdlib.h>   // Library System Clearscreen
 #include <stdbool.h> // library untuk tipe data boolean
+#include <time.h>   //Library Untuk Tanggal 
 
 void judulprogram (void); //fungsi tampilan judul program
 
@@ -430,8 +435,7 @@ void menuLaptop (void){
 			char namaCustomer[100] ;
 			char HP[20];
 			char alamat[50];
-
-			if(pesan == 'y'||pesan == 'Y'){                                             
+                        if(pesan == 'y'||pesan == 'Y'){                                             
 				system("cls");
 				printf("\n\n");
 				header();
@@ -456,6 +460,7 @@ void menuLaptop (void){
 			    	getchar();
 			    	menuUtama();
 			}
+			
 			 
 			else if(pesan == 'n'||pesan == 'N'){
 				goto menuAwal;
