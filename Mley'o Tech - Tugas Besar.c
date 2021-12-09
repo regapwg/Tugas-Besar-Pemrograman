@@ -28,7 +28,7 @@
 #include <stdbool.h> // library untuk tipe data boolean
 #include <time.h>   //Library Untuk Tanggal 
 
-void judulprogram (void); //fungsi tampilan judul program
+void judulProgram (void); //fungsi tampilan judul program
 
 void header(void); //fungsi untuk menampilkan header program
 
