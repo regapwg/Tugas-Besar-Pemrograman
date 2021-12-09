@@ -111,6 +111,7 @@ void judulProgram (void){
 	getch();
 }
 
+
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>         Fungsi Untuk Menggunkan header          <<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -153,6 +154,7 @@ void header (void){
 	printf("\t\t\t\t       %i:%i:%02i", waktu.jam, waktu.menit, waktu.detik );
 	printf("\n");
 }
+
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem menuLogin    <<<<<<<<<<<//
@@ -544,6 +546,7 @@ void listSpesifikasi (void){
 	}		
 }
 
+
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>            Fungsi Untuk Opsi Kembali            <<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -555,7 +558,6 @@ void listSpesifikasi (void){
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                              		         //
 //-----------------------------------------------------------------------//
-
 void opsiKembali (void){
 	char opsi;
 	
@@ -678,4 +680,4 @@ void specLaptop3 (void){
 	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
 	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-}
+} 
