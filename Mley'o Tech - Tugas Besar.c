@@ -154,10 +154,9 @@ void header (void){
 	printf("\t\t\t\t         Jl. Disana GG. Disini No.666, Denpasar        \n");
 	printf("\t\t\t\t                     +62 81246810121                   \n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\n");
 	printf("\t\t\t\t %i/%i/%i", waktu.tanggal, waktu.bulan, waktu.tahun );
 	printf("\t\t\t\t       %i:%i:%02i", waktu.jam, waktu.menit, waktu.detik );
-	printf("\n");
+	printf("\n\n");
 }
 
 
@@ -313,7 +312,7 @@ void menuUtama (void){
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ||  [1] DAFTAR LAPTOP                               ||\n");
-	printf("\t\t\t\t ||  [2] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [2] SPESIFIKASI LAPTOP                          ||\n");
 	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
 	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");
@@ -323,6 +322,9 @@ void menuUtama (void){
 	//memilih menu
 		if(menuUtama==1){
 			menuLaptop();
+		}
+		else if(menuUtama==2){
+			listSpesifikasi();
 		}
 }
 //-----------------------------------------------------------------------//
@@ -372,10 +374,13 @@ void menuLaptop (void){
 	printf("\t\t\t\t ||  [Y]  Pemesanan                                  ||\n");
 	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  >> ingin memesan? : ");
+	printf("\t\t\t\t ||  >> ingin memesan berapa unit? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
+		printf("\t\t\t\t ||  >> Ingin pesan berapa unit Laptop? : ");
+		scanf("%d", &unit);
+		printf("\t\t\t\t ++--------------------------------------------------++\n\n");
 		
 		for(data=1; data<=unit; data++){  
 		printf("\n");               //perulangan dalam memilih unit Laptop
