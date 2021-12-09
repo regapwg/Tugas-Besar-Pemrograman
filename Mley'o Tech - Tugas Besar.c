@@ -372,109 +372,104 @@ void menuLaptop (void){
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
 		
-		printf("\t\t\t\t ||  >> Ingin pesan berapa unit Laptop? : ");
-		scanf("%d", &unit);
-		printf("\t\t\t\t ++--------------------------------------------------++\n\n");
-	
-		for(i=1; i<=unit; i++){  
-			printf("\n\n");               //perulangan dalam memilih unit Laptop
-			printf("\t\t\t\t >> Pilih Laptop ke-%i   : " , i);
-			scanf("%i", &menuLaptop[i]);
-			printf("\t\t\t\t >> Jumlah Unit         : " , data);
-			scanf("%i", &jumlah[data]);
-			printf("\n");
-	
-			printf("\n");
+		for(data=1; data<=unit; data++){  
+		printf("\n");               //perulangan dalam memilih unit Laptop
+		printf("\t\t\t\t >> Pilih Laptop ke-%d   : " , data);
+		scanf("%d", &menuLaptop[data]);
+		printf("\n");
+		printf("\t\t\t\t >> Jumlah Unit         : " , data);
+		scanf("%i", &jumlah[data]);
+		printf("\n");
+			
 		
-			if (menuLaptop[i]==1){
+			if (menuLaptop[data]==1){
 				harga[data]= 16500000;
 				namaLaptop[data][data]= "Macbook Air 2020";
 			}
-			else if(menuLaptop[i]==2){
+			else if(menuLaptop[data]==2){
 				harga[data]= 20900000;
-				namaLaptop[data][data]= "Macbook Pro M1";
+				namaLaptop[data][data]= "Macbook Pro M1";	
 			}
-			else if(menuLaptop[i]==3){
+			else if(menuLaptop[data]==3){
 				harga[data]= 18500000;
-				namaLaptop[data][data]= "ASUS TUF Gaming F15";
+				namaLaptop[data][data]= "ASUS TUF Gaming F15";	
 			}
 			else{
-	   			printf ("\t\t\t\t >> Masukan Pilihan Yang Sesuai! << ");
+				printf ("\t\t\t\t >> Masukan Pilihan Yang Sesuai! << ");
 				getch();
 	   			goto menuAwal;
-			}
-		}
-	}
-	
-	for(data=1; data<=unit; data++){
-	harga[data] = harga[data] * jumlah[data];
-	totalTagihan = totalTagihan + harga[data];
-	}
-	
- 		system("cls");
-		printf("\n\n");
-		header();
-		printf("\n");
-		printf("\t\t\t   -----------------------------------------------------------------\n");
+			}	
+	}	
+		
 		for(data=1; data<=unit; data++){
-			printf("\t\t\t   >> Nama Unit         : %s\n",namaLaptop[data][data]);
-			printf("\t\t\t   >> Jumlah            : %i\n",jumlah[data]);
-			printf("\t\t\t   >> Total Harga       : Rp.%d\n",harga[data]);
-			printf("\t\t\t   -----------------------------------------------------------------\n");				
-		} 
-				
-			
-		printf("\n");
-		printf("\t\t\t   TOTAL TAGIHAN : Rp.%d  ||  ", totalTagihan);
-		printf("Teruskan Pemesanan? (y/n) : ");
-		getchar();
-		pesan = getchar();
-		printf("\t\t\t   -----------------------------------------------------------------\n\n");	
-			 
-		checkout:;
-		char namaCustomer[100] ;
-		char HP[20];
-		char alamat[50];
-
-		if(pesan == 'y'||pesan == 'Y'){                                             
-			system("cls");
+		harga[data] = harga[data] * jumlah[data];
+		totalTagihan = totalTagihan + harga[data];
+		}
+		
+ 			system("cls");
 			printf("\n\n");
 			header();
 			printf("\n");
-			printf("\t\t\t   -----------------------------------------------------------------\n");	
-			printf("\t\t\t                      Silahkan Isi Data Diri Anda\n\n");
-			printf("\t\t\t   >> Nama          : "); fflush(stdin);
-			gets(namaCustomer);
-			printf("\t\t\t   >> No Telepon    : "); fflush(stdin);
-			gets(HP);
-			printf("\t\t\t   >> Alamat        : "); fflush(stdin);
-			gets(alamat);
-			printf("\t\t\t   -----------------------------------------------------------------\n\n");
-			printf("\t\t\t                     >> Data Berhasil Tersimpan <<\n\n");
-			printf("\t\t\t   Silahkan Lakukan Pembayaran Melalui Salah Satu Rekening Berikut : \n");
-			printf("\t\t\t   CIMB Niaga     : 2105551038\n");
-			printf("\t\t\t   Bank Syariah   : 2105551005\n");
-			printf("\t\t\t   BCA            : 2105551038\n");
-			printf("\t\t\t   DANA           : 2105551005\n");
+			printf("\t\t\t   -----------------------------------------------------------------\n");
+			for(data=1; data<=unit; data++){
+				printf("\t\t\t   >> Nama Unit         : %s\n",namaLaptop[data][data]);
+				printf("\t\t\t   >> Jumlah            : %i\n",jumlah[data]);
+				printf("\t\t\t   >> Total Harga       : Rp.%d\n",harga[data]);
+				printf("\t\t\t   -----------------------------------------------------------------\n");				
+			} 
+				
+			
+			printf("\n");
+			printf("\t\t\t   TOTAL TAGIHAN : Rp.%d  ||  ", totalTagihan);
+			printf("Teruskan Pemesanan? (y/n) : ");
+			getchar();
+			pesan = getchar();
+			printf("\t\t\t   -----------------------------------------------------------------\n\n");	
+			 
+			checkout:;
+			char namaCustomer[100] ;
+			char HP[20];
+			char alamat[50];
+
+			if(pesan == 'y'||pesan == 'Y'){                                             
+				system("cls");
+				printf("\n\n");
+				header();
+				printf("\n");
+				printf("\t\t\t   -----------------------------------------------------------------\n");	
+				printf("\t\t\t                      Silahkan Isi Data Diri Anda\n\n");
+				printf("\t\t\t   >> Nama          : "); fflush(stdin);
+				gets(namaCustomer);
+				printf("\t\t\t   >> No Telepon    : "); fflush(stdin);
+				gets(HP);
+				printf("\t\t\t   >> Alamat        : "); fflush(stdin);
+				gets(alamat);
+				printf("\t\t\t   -----------------------------------------------------------------\n\n");
+			    	printf("\t\t\t                     >> Data Berhasil Tersimpan <<\n\n");
+			    	printf("\t\t\t   Silahkan Lakukan Pembayaran Melalui Salah Satu Rekening Berikut : \n");
+			    	printf("\t\t\t   CIMB Niaga     : 2105551038\n");
+			    	printf("\t\t\t   Bank Syariah   : 2105551005\n");
+			    	printf("\t\t\t   BCA            : 2105551038\n");
+			    	printf("\t\t\t   DANA           : 2105551005\n");
 			    	
 			    
-			getchar();
-			menuUtama();
-		}
+			    	getchar();
+			    	menuUtama();
+			}
 			 
-		else if(pesan == 'n'||pesan == 'N'){
-			goto menuAwal;
-		}
-		else{
-			printf("\t\t\t\t         Input salah, Masukkan Input yang Benar!    \n");	
-			printf("\t\t\t\t                   Enter untuk Coba Lagi         \n");
-			goto checkout;
-		}
+			else if(pesan == 'n'||pesan == 'N'){
+				goto menuAwal;
+			}
+			else{
+				printf("\t\t\t\t         Input salah, Masukkan Input yang Benar!    \n");	
+				printf("\t\t\t\t                   Enter untuk Coba Lagi         \n");
+				goto checkout;
+			}
 	}
 	else if (pilihan=='t'||pilihan=='T'){
 		menuUtama();
 		getch();
-	}		
+	}
 }
 
 //-----------------------------------------------------------------------//
