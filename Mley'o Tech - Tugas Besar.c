@@ -1,13 +1,13 @@
-//***********************************************************************//
+//-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>       	 Library dan Tipe data           <<<<<<<<<<<<<<<<//
-//***********************************************************************//
+//-----------------------------------------------------------------------//
 //                         >> 5 Desember 2021 <<                         //
 // Nama Library   : stdlib.h                                             //
 // Deskripsi      : berfungsi untuk clearscreen                          //
 // Dibuat Oleh    : I GedeKhresna Adi Wedanta Beratha                    //
 //                  (2105551038)                                         //
 //                                                                       //
-//                         >> 5 Desember 2021 <<                         //
+//                         >> 5 Desember 2021 <<           	         //
 // 1. Nama Library   : stdbool.h                                         //
 //    Deskripsi      : berfungsi untuk menggunakan tipe data boolean     //
 // 2. Nama Tipe data : Char                                              //
@@ -16,9 +16,9 @@
 // 3. Nama Tipe data : Struct dengan variabel user, didalamnya terdapat  //
 //                     variabel char                                     //
 //    Deskripsi      : berfungsi untuk menampung beberapa variabel       //
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
-//                  (2105551005)                                         //
-//=======================================================================//
+// 	  Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005        //
+//                                                                       //
+//-----------------------------------------------------------------------//
 
 #include <stdio.h>     // library menu utama 
 #include <stdlib.h>   // Library System Clearscreen
@@ -54,23 +54,22 @@ struct Data{
 
 FILE*kumpulandata; //pointer untuk mengakses file
 
-//=======================================================================//
-//>>>>>>>>>>>                     Program Utama               <<<<<<<<<<<//
-//=======================================================================//
-//                         >> 4 Desember 2021 <<          	         //
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>                   Program Utama                 <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 4 Desember 2021 <<           		 //
 // Nama 	      : int main (void)                                  //
 // Deskripsi      : program utama berisikan beberapa fungsi yang akan    //
 //                  dijalankan, diantaranya judulprogram (); menu();     //	
 //                  serta pilihanmenu (input_program);                   //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga  - 2105551005              //
 //                                                                       //
-//                                             		                 //
-// Versi : 1.1                                     Rev. 1                //
-//                                                 Tgl: 05-12-2021       //
+//                                              			 //
+//                         >> 5 Desember 2021 <<           	         //
 // Revisi 1       : Merubah isi fungsi yang digunakan hanya judulProgram //
 //                  dan menuLogin(); saja                                //
 // Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
-//=======================================================================//
+//-----------------------------------------------------------------------//
 
 int main (void){
 	
@@ -80,22 +79,21 @@ int main (void){
 	return (0);
  }
  
-//***********************************************************************//
-//>>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Judulprogram    <<<<<<<<<<<<<<//
-//***********************************************************************//
+//-----------------------------------------------------------------------//
+//<<<<<<<<<<<<<<    Fungsi Untuk Menampilkan Judulprogram  <<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
 //                         >> 4 Desember 2021 <<           		 //
 // Nama Fungsi    : judulprogram                                         //
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan judul program //
 //                  saat program pertama kali di buka                    //	
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
-//                  (2105551005)                                         //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
 //                                              			 //
-// Versi : 1.1                                     Rev. 1                //
-//                                                 Tgl: 06-12-2021       //
+//                         >> 6 Desember 2021 <<           		 //
 // Revisi 1       : Merapikan tampilan menu pada fungsi judulprogram     //
 //                  Mengganti nama fungsi menjadi judulProgram           //
 // Direvisi Oleh  : Khresna Adi Wedanta - 2105551038                     //
-//=======================================================================//
+//-----------------------------------------------------------------------//
 
 void judulProgram (void){
 	printf("\n\n");
@@ -114,36 +112,61 @@ void judulProgram (void){
 	getch();
 }
 
-//=======================================================================//
+//-----------------------------------------------------------------------//
 //>>>>>>>>>>>         Fungsi Untuk Menggunkan header          <<<<<<<<<<<//
-//=======================================================================//
-//                         >> 6 Desember 2021 <<           		         //
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           		 //
 // Nama Fungsi    : header                                               //
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan header di     //
 //                  setiap menu yang di tampilkan                        //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
 //                  (2105551005)                                         //
-//                                              	                 //
-//=======================================================================//
+//                                                                       //
+//                         >> 9 Desember 2021 <<           		 //
+// Revisi 1       : Menambahkan sistem waktu dan tanggal otomatis yang   //
+//                  diambil berdasarkan waktu server                     //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//-----------------------------------------------------------------------//
 void header (void){
+	
+	struct waktu{    
+		int bulan, tanggal, tahun, jam, menit, detik;
+		}waktu;        
+								
+		time_t kalender; //Tipe data dari library time.h
+		time(&kalender);
+		clock_t pukul;
+		
+		
+		struct tm*data = localtime(&kalender); 	//Tipe data dan variabel untuk waktu system 
+			waktu.bulan = data->tm_mon + 1;
+			waktu.tanggal = data->tm_mday;
+			waktu.tahun = data->tm_year + 1900;
+			waktu.jam = data->tm_hour;
+			waktu.menit = data-> tm_min;
+			waktu.detik = data->tm_sec;
+	
 	printf("\t\t\t\t                      Mley'o Tech                      \n");
 	printf("\t\t\t\t         Jl. Disana GG. Disini No.666, Denpasar        \n");
 	printf("\t\t\t\t                     +62 81246810121                   \n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\n");
+	printf("\t\t\t\t %i/%i/%i", waktu.tanggal, waktu.bulan, waktu.tahun );
+	printf("\t\t\t\t       %i:%i:%02i", waktu.jam, waktu.menit, waktu.detik );
+	printf("\n");
 }
 
-//=======================================================================//
+//-----------------------------------------------------------------------//
 //>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem menuLogin    <<<<<<<<<<<//
-//=======================================================================//
-//                         >> 5 Desember 2021 <<           	         //
+//-----------------------------------------------------------------------//
+//                         >> 5 Desember 2021 <<           		 //
 // Nama Fungsi    : menuLogin                                            //
 // Deskripsi      : fungsi ini berfungsi untuk melakukan login serta     //
 //                  registrasi akun sebelum masuk ke menu utama          //	
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga                            //
-//                  (2105551005)                                         //
-//                                              		         //
-//=======================================================================//
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//                                              			 //
+//-----------------------------------------------------------------------//
 void menuLogin(void){
 	awalmenu:
 	system("cls");
