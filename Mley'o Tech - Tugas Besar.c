@@ -103,7 +103,7 @@ int main (void){
 //-----------------------------------------------------------------------//
 
 void judulProgram (void){
-	printf("\n\n");
+	printf("\n\n\n\n\n");
 	printf("\t\t\t\t +--------------------------------------------+\n");
 	printf("\t\t\t\t |          Program Toko Mley'o Tech          |\n");
 	printf("\t\t\t\t +--------------------------------------------+\n");
@@ -138,11 +138,15 @@ void judulProgram (void){
 // Revisi 2       : Menghapus penggunaan beberapa struct variabel        //
 //                  sebelumnya dan merapikan penulisan coding            //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+// Revisi 3       : Memperbaiki tampilan dan menambahkan sistem hari     //
+//                  otomatis yang diambil berdasarkan waktu server       //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void header (void){
 	
 int bulan, tanggal, tahun, jam, menit, detik, hari;
-	
+char date[64];	
 		      					
 	time_t kalender; //Tipe data dari library time.h
 	time(&kalender);
@@ -154,13 +158,15 @@ int bulan, tanggal, tahun, jam, menit, detik, hari;
 			jam = data->tm_hour;
 			menit = data-> tm_min;
 			detik = data->tm_sec;
+			hari = data->tm_wday;
 	
 	printf("\t\t\t\t                      Mley'o Tech                      \n");
 	printf("\t\t\t\t         Jl. Disana GG. Disini No.666, Denpasar        \n");
 	printf("\t\t\t\t                     +62 81246810121                   \n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t %i/%i/%i", tanggal, bulan, tahun );
-	printf("\t\t\t\t       %02i:%i:%02i", jam, menit, detik );
+	strftime(date, 64, "\t\t\t\t %A, %d %B %Y", data);
+    	printf(date);
+	printf("\t\t       %02i:%02i:%02i", waktu.jam, waktu.menit, waktu.detik );
 	printf("\n\n");
 }
 
@@ -178,6 +184,8 @@ int bulan, tanggal, tahun, jam, menit, detik, hari;
 // Revisi 1       : Menambahkan Opsi User tanpa Login                    //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+// Revisi 2       : Memperbaiki tampilan pada menu login dan daftar      //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 
 void menuLogin(void){
@@ -188,17 +196,17 @@ void menuLogin(void){
 	int opsi;
 	
  	printf("\n\n");
-	printf("\t\t\t\t ++------------------------------------------++\n");
-	printf("\t\t\t\t ||    Welcome to Program Toko Mley'o Tech   ||\n");
-	printf("\t\t\t\t ++------------------------------------------++\n");
-        printf("\t\t\t\t ||                                          ||\n");
-	printf("\t\t\t\t ||             1 | Masuk                    ||\n");
-	printf("\t\t\t\t ||                                          ||\n");
-	printf("\t\t\t\t ||             2 | Login                    ||\n");
-	printf("\t\t\t\t ||                                          ||\n");
-	printf("\t\t\t\t ||             3 | Daftar                   ||\n");		
-	printf("\t\t\t\t ||                                          ||\n");
-	printf("\t\t\t\t ++------------------------------------------++\n");	
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||         Welcome to Program Toko Mley'o Tech      ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+        printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||                   1 | Masuk                      ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||                   2 | Login                      ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||                   3 | Daftar                     ||\n");		
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");	
 	printf("\n");
 	printf("\t\t\t\t >> Input Pilihan : ");
 	scanf("%d", &opsi);
@@ -213,11 +221,13 @@ void menuLogin(void){
 			system("cls");
 			kumpulandata = fopen("user","r+"); //
 					
-			printf ("\n\n\n"); 
-			printf ("\t\t\t\t |  USERNAME  : ");
+			printf ("\n\n");
+			header(); 
+			printf ("\n");
+			printf ("\t\t\t\t\t         USERNAME  : ");
 			scanf("%s", &username);
-			printf ("\t\t\t\t +-----------------------+\n");
-			printf ("\t\t\t\t |  PASSWORD  : ");
+			printf ("\n");
+			printf ("\t\t\t\t\t         PASSWORD  : ");
 			scanf("%s", &password);
 							
 			while(fscanf(kumpulandata,"\n%s\n%s",user.nama,user.password)!=EOF){ //
@@ -230,36 +240,49 @@ void menuLogin(void){
 	    	}	
 				       				
 		if (status) { //jika benar akan masuk ke menu utama
-		menuUtama();
-		getch();
-		system("cls");
+			system("cls");
+			printf("\n\n\n\n\n");
+			printf("\t\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+			printf("\t\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t\t |           !! LOGIN BERHASIL !!           |\n");
+			printf("\t\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t\t |            enter to continue             |\n");
+			printf("\t\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t\t +------------------------------------------+\n");
+			getch();
+			menuUtama();
+			system("cls");
 		}
-			else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
+		else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
 							    		
-				system("cls");
-				printf("\n");
-				printf("\t\t\t\t +------------------------------------------+\n");
-				printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
-				printf("\t\t\t\t +------------------------------------------+\n");
-				printf("\t\t\t\t |                                          |\n");
-				printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
-				printf("\t\t\t\t |                                          |\n");
-				printf("\t\t\t\t |            enter to continue             |\n");
-				printf("\t\t\t\t |                                          |\n");
-				printf("\t\t\t\t +------------------------------------------+\n");	
-				getch();
-				goto awalmenu;
+			system("cls");
+			printf("\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |            enter to continue             |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");	
+			getch();
+			goto awalmenu;
 			} 
 		break;
 						
 		case 3: //untuk melakukan registrasi apabila belum memiliki akun
 			system("cls");
 			kumpulandata=fopen("user","a+"); //membuka file
-			printf ("\n\n\n"); 
-			printf ("\t\t\t\t |  USERNAME  : ");
+				
+			printf ("\n\n");
+			header(); 
+			printf ("\n");
+			printf ("\t\t\t\t\t         USERNAME  : ");
 			scanf("%s", &user.nama);
-			printf ("\t\t\t\t +--------------------------------------------------+\n");
-			printf ("\t\t\t\t |  PASSWORD  : ");
+			printf ("\t\t\t\t\t         PASSWORD  : ");
 			scanf("%s", &user.password);
 							
 			system("cls");
@@ -288,7 +311,7 @@ void menuLogin(void){
 			printf("\t\t\t\t +------------------------------------------+\n");
 			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
 			printf("\t\t\t\t +------------------------------------------+\n");
-		    printf("\t\t\t\t |                                          |\n");
+		   	printf("\t\t\t\t |                                          |\n");
 			printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
 			printf("\t\t\t\t |                                          |\n");
 			printf("\t\t\t\t |              enter to continue           |\n");
@@ -296,7 +319,7 @@ void menuLogin(void){
 			printf("\t\t\t\t +------------------------------------------+\n");
 			getch();
 			goto awalmenu;
-			break;
+		break;
 			}
 }
 
@@ -401,6 +424,11 @@ void menuUtama2 (void){
 //									 //
 // Revisi 3       : Merapikan tampilan menu pada data diri pembeli       //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//                         >> 10 Desember 2021 <<           	         //
+// Revisi 4       : Merapikan tampilan menu pada bagian daftar bank      //
+//                  dan merubah beberapa nama variabel                   //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 
 void menuLaptop (void){
@@ -409,7 +437,7 @@ void menuLaptop (void){
 	const char * namaLaptop[100][25];
 		
 	int data, unit, menuLaptop[100], harga[100], totalTagihan = 0;
-	char pilihan, pesan, jumlah [100];
+	char pilihan, checkout, jumlah [100];
 	
 	system("cls");
 	printf("\n\n");
@@ -423,14 +451,14 @@ void menuLaptop (void){
 	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [Y]  Pemesanan                                  ||\n");
+	printf("\t\t\t\t ||  [Y]  Checkout                                   ||\n");
 	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  >> ingin memesan berapa unit? : ");
+	printf("\t\t\t\t ||  >> ingin checkout Laptop? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
-		printf("\t\t\t\t ||  >> Ingin pesan berapa unit Laptop? : ");
+		printf("\t\t\t\t ||  >> Ingin checkout berapa unit Laptop? : ");
 		scanf("%d", &unit);
 		printf("\t\t\t\t ++--------------------------------------------------++\n\n");
 		
@@ -485,14 +513,14 @@ void menuLaptop (void){
 			printf("\t\t\t   TOTAL TAGIHAN : Rp.%d  ||  ", totalTagihan);
 			printf("Teruskan Pemesanan? (y/n) : ");
 			getchar();
-			pesan = getchar();
+			checkout = getchar();
 			printf("\t\t\t   -----------------------------------------------------------------\n\n");	
 			 
 			checkout:;
 			char namaCustomer[100] ;
 			char HP[20];
 			char alamat[50];
-                        if(pesan == 'y'||pesan == 'Y'){                                             
+                        if(checkout == 'y'||checkout == 'Y'){                                             
 				system("cls");
 				printf("\n\n");
 				header();
@@ -507,11 +535,11 @@ void menuLaptop (void){
 				gets(alamat);
 				printf("\t\t\t   -----------------------------------------------------------------\n\n");
 			    	printf("\t\t\t                     >> Data Berhasil Tersimpan <<\n\n");
-			    	printf("\t\t\t   Silahkan Lakukan Pembayaran Melalui Salah Satu Rekening Berikut : \n");
-			    	printf("\t\t\t   CIMB Niaga     : 2105551038\n");
-			    	printf("\t\t\t   Bank Syariah   : 2105551005\n");
-			    	printf("\t\t\t   BCA            : 2105551038\n");
-			    	printf("\t\t\t   DANA           : 2105551005\n");
+			    	printf("\t\t\t   Silahkan Lakukan Pembayaran Melalui Salah Satu Rekening Berikut : \n\n");
+			    	printf("\t\t\t   CIMB Niaga     : 2105551038");
+			    	printf("\t         Bank Syariah   : 2105551005\n");
+			    	printf("\t\t\t   BCA            : 2105551038");
+			    	printf("\t         DANA           : 2105551005\n");
 			    	
 			    
 			    	getchar();
@@ -519,7 +547,7 @@ void menuLaptop (void){
 			}
 			
 			 
-			else if(pesan == 'n'||pesan == 'N'){
+			else if(checkout == 'n'||checkout == 'N'){
 				goto menuAwal;
 			}
 			else{
