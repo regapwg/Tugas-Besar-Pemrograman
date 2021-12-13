@@ -34,7 +34,9 @@ void header(void); //fungsi untuk menampilkan header program
 
 void menuLogin (void); //fungsi login
 
-void menuUtama (void); //fungsi tampilan menu utama
+void menuUtama (void); //fungsi tampilan menu utama ketika login
+
+void menuUtama2 (void); //fungsi tampilan menu utama tanpa login
 
 void menuLaptop (void); //fungsi tampilan menu laptop
 
@@ -166,7 +168,7 @@ char date[64];
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	strftime(date, 64, "\t\t\t\t %A, %d %B %Y", data);
     	printf(date);
-	printf("\t\t       %02i:%02i:%02i", jam, menit, detik );
+	printf("\t\t       %02i:%02i:%02i", waktu.jam, waktu.menit, waktu.detik );
 	printf("\n\n");
 }
 
@@ -363,6 +365,42 @@ void menuUtama (void){
 		}
 		else if(menuUtama==2){
 			listSpesifikasi();
+		}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Menu Tanpa Login  <<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 10 Desember 2021 <<                        //
+// Nama Fungsi    : menuUtama2                                           //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan menu utama    //
+//                  dalam program user tanpa login                       //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//-----------------------------------------------------------------------//
+void menuUtama2 (void){
+	menuUtama2:
+	system("cls");
+	printf("\n\n");
+	header();
+	int menuUtama;
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  [1] SPESIFIKASI LAPTOP                          ||\n");
+	printf("\t\t\t\t ||  [2] REKOMENDASI LAPTOP (Coming Soon)            ||\n");
+	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [5] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  [97] Coming Soon ~                              ||\n");
+	printf("\t\t\t\t ||  [98] Coming Soon ~                              ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); // Memilih Jasa yang diinginkan
+	scanf("%d", &menuUtama);
+	//memilih menu
+		if(menuUtama==1){
+			listSpesifikasi2();
 		}
 }
 
