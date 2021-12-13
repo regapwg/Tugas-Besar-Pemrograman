@@ -669,6 +669,74 @@ void listSpesifikasi (void){
 	}		
 }
 
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	 Fungsi List Spesifikasi2	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 10 Desember 2021 <<                   	 //
+// Nama Fungsi    : listSpesifikasi2                                     //
+// Deskripsi      : berfungsi untuk menampilkan menu list spesifikasi    //
+//                  laptop untuk user tanpa login                        //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void listSpesifikasi2 (void){
+	menuSpec:;
+	
+	int unit;
+	char pilihan;
+	
+	system("cls");
+	printf("\n\n");
+	header();
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
+	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
+	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  [Y]  Melihat Spesifikasi                        ||\n");
+	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  >> Cek spesifikasi? : ");
+	scanf("%s", &pilihan);
+	
+	if (pilihan == 'y'|| pilihan =='Y'){
+		
+		printf("\t\t\t\t ||  >> Silahkan pilih Laptop yang diinginkan  : ");
+		scanf("%d", &unit);
+		printf("\t\t\t\t ++--------------------------------------------------++\n");
+			if (unit==1){
+				system("cls");
+				specLaptop1 ();
+				opsiKembali2 ();
+			}
+			else if(unit==2){
+				system("cls");
+				specLaptop2 ();
+				opsiKembali2 ();
+			}
+			else if(unit==3){
+				system("cls");
+				specLaptop3 ();
+				opsiKembali2 ();	
+			}
+			else{
+				printf("\t\t\t\t         Input salah, Masukkan Input yang Benar!    \n");	
+				printf("\t\t\t\t                   Enter untuk Coba Lagi         \n");	
+				getch();
+				goto menuSpec;
+			}
+		}
+		
+	else if (pilihan=='t'||pilihan=='T'){
+		menuUtama();
+		getch();
+	}		
+}
+
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>            Fungsi Untuk Opsi Kembali            <<<<<<<<<<<//
