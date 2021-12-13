@@ -631,6 +631,39 @@ void opsiKembali (void){
 	}   
 }	
 
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>            Fungsi Untuk Opsi Kembali 2          <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                                              		         //
+//                         >> 12 Desember 2021 <<           	         //
+// Nama Fungsi    : opsiKembali2                                         //
+// Deskripsi      : fungsi ini berfungsi untuk memilih opsi kembali ke   //
+//                  menu sebelumnya dan alert untuk melakukan login      //	
+//                  terlebih dahulu                                      //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+
+void opsiKembali2 (void){
+	char opsi;
+	
+	printf ("\n\n");
+	printf("\t\t\t\t >> [Y] Cek Spesifikasi lain \n");
+	printf("\t\t\t\t >> [P] Pesan Sekarang \n\n");
+	printf("\t\t\t\t >> Masukkan Pilihan : ");
+	scanf("%s", &opsi);
+				
+	if (opsi == 'y' || opsi=='Y'){
+		listSpesifikasi();
+	}
+	else if (opsi == 'p' || opsi=='P') {
+		system ("cls");
+		printf("\n\n\n\n");
+		printf("\t\t\t >>  Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+		getch();
+		menuLogin();
+	}   
+}	
 
 
 //-----------------------------------------------------------------------//
