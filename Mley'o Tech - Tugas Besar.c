@@ -166,7 +166,7 @@ char date[64];
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	strftime(date, 64, "\t\t\t\t %A, %d %B %Y", data);
     	printf(date);
-	printf("\t\t       %02i:%02i:%02i", waktu.jam, waktu.menit, waktu.detik );
+	printf("\t\t       %02i:%02i:%02i", jam, menit, detik );
 	printf("\n\n");
 }
 
