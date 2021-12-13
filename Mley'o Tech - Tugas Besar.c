@@ -40,7 +40,11 @@ void menuLaptop (void); //fungsi tampilan menu laptop
 
 void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
 
-void opsiKembali (void); //fungsi opsi kembali 
+void listSpesifikasi2 (void); //fungsi tampilan list spesifikasi laptop tanpa login
+
+void opsiKembali (void); //fungsi opsi kembali untuk fungsi spesifikasi (login)
+
+void opsiKembali2 (void); //fungsi opsi kembali untuk fungsi spesifikasi (tanpa login)
 
 void specLaptop1 (void); //fungsi menampilkan spec laptop 1
 
@@ -169,120 +173,130 @@ void header (void){
 //                  registrasi akun sebelum masuk ke menu utama          //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 10 Desember 2021 <<           	         //
+// Revisi 1       : Menambahkan Opsi User tanpa Login                    //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
 //-----------------------------------------------------------------------//
+
 void menuLogin(void){
-	awalmenu:
+	awalmenu: //
 	system("cls");
  
+	bool status; //
+	int opsi;
 	
-		bool status;
-		int opsi;
- 	
- 				printf("\n\n");
-				printf("\t\t\t\t ++------------------------------------------++\n");
-				printf("\t\t\t\t ||    Welcome to Program Toko Mley'o Tech   ||\n");
-				printf("\t\t\t\t ++------------------------------------------++\n");
-				printf("\t\t\t\t ||                                          ||\n");
-				printf("\t\t\t\t ||             1 | Login                    ||\n");
-				printf("\t\t\t\t ||                                          ||\n");
-				printf("\t\t\t\t ||             2 | Daftar                   ||\n");		
-				printf("\t\t\t\t ||                                          ||\n");
-				printf("\t\t\t\t ++------------------------------------------++\n");	
-				printf("\n");
-				printf("\t\t\t\t >> Input Pilihan : ");
-				scanf("%d", &opsi);
-					switch(opsi){
-						
-							
-						case 1: //log-in setelah membuat akun
-						
+ 	printf("\n\n");
+	printf("\t\t\t\t ++------------------------------------------++\n");
+	printf("\t\t\t\t ||    Welcome to Program Toko Mley'o Tech   ||\n");
+	printf("\t\t\t\t ++------------------------------------------++\n");
+        printf("\t\t\t\t ||                                          ||\n");
+	printf("\t\t\t\t ||             1 | Masuk                    ||\n");
+	printf("\t\t\t\t ||                                          ||\n");
+	printf("\t\t\t\t ||             2 | Login                    ||\n");
+	printf("\t\t\t\t ||                                          ||\n");
+	printf("\t\t\t\t ||             3 | Daftar                   ||\n");		
+	printf("\t\t\t\t ||                                          ||\n");
+	printf("\t\t\t\t ++------------------------------------------++\n");	
+	printf("\n");
+	printf("\t\t\t\t >> Input Pilihan : ");
+	scanf("%d", &opsi);
+		switch(opsi){
+					
+		case 1:
+			menuUtama2();
+		break;		
+	    case 2: //log-in setelah membuat akun
+			
 								
-							system("cls");
-							kumpulandata = fopen("user","r+");
-						
-							printf ("\n\n\n"); 
-							printf ("\t\t\t\t |  USERNAME  : ");
-							scanf("%s", &username);
-							printf ("\t\t\t\t +-----------------------+\n");
-							printf ("\t\t\t\t |  PASSWORD  : ");
-							scanf("%s", &password);
+			system("cls");
+			kumpulandata = fopen("user","r+"); //
+					
+			printf ("\n\n\n"); 
+			printf ("\t\t\t\t |  USERNAME  : ");
+			scanf("%s", &username);
+			printf ("\t\t\t\t +-----------------------+\n");
+			printf ("\t\t\t\t |  PASSWORD  : ");
+			scanf("%s", &password);
 							
-								while(fscanf(kumpulandata,"\n%s\n%s",user.nama,user.password)!=EOF){
-							            if((strcmp(user.nama,username) == 00) && (strcmp(user.password,password)==00)){
-							                status = true;
-							                break;
-					           			}
-				       				}	
+			while(fscanf(kumpulandata,"\n%s\n%s",user.nama,user.password)!=EOF){ //
+								            
+				if((strcmp(user.nama,username) == 00) && 
+				(strcmp(user.password,password)==00)){ //
+			    status = true;
+			    break;
+			    }
+	    	}	
 				       				
-						        	if (status) { //jika benar akan masuk ke menu utama
-										menuUtama();
-										getch();
-							            system("cls");
-						        	}
-							    	else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
+		if (status) { //jika benar akan masuk ke menu utama
+		menuUtama();
+		getch();
+		system("cls");
+		}
+			else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
 							    		
-							            system("cls");
-							            printf("\n");
-							            printf("\t\t\t\t +------------------------------------------+\n");
-										printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
-										printf("\t\t\t\t +------------------------------------------+\n");
-										printf("\t\t\t\t |                                          |\n");
-										printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
-										printf("\t\t\t\t |                                          |\n");
-										printf("\t\t\t\t |            enter to continue             |\n");
-										printf("\t\t\t\t |                                          |\n");
-										printf("\t\t\t\t +------------------------------------------+\n");	
-							          	getch();
-							            goto awalmenu;
-							    	} 
-						break;
+				system("cls");
+				printf("\n");
+				printf("\t\t\t\t +------------------------------------------+\n");
+				printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+				printf("\t\t\t\t +------------------------------------------+\n");
+				printf("\t\t\t\t |                                          |\n");
+				printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
+				printf("\t\t\t\t |                                          |\n");
+				printf("\t\t\t\t |            enter to continue             |\n");
+				printf("\t\t\t\t |                                          |\n");
+				printf("\t\t\t\t +------------------------------------------+\n");	
+				getch();
+				goto awalmenu;
+			} 
+		break;
 						
-						case 2: //untuk melakukan registrasi apabila belum memiliki akun
-							system("cls");
-							kumpulandata=fopen("user","a+"); //membuka file
-							printf ("\n\n\n"); 
-							printf ("\t\t\t\t |  USERNAME  : ");
-							scanf("%s", &user.nama);
-							printf ("\t\t\t\t +--------------------------------------------------+\n");
-							printf ("\t\t\t\t |  PASSWORD  : ");
-							scanf("%s", &user.password);
+		case 3: //untuk melakukan registrasi apabila belum memiliki akun
+			system("cls");
+			kumpulandata=fopen("user","a+"); //membuka file
+			printf ("\n\n\n"); 
+			printf ("\t\t\t\t |  USERNAME  : ");
+			scanf("%s", &user.nama);
+			printf ("\t\t\t\t +--------------------------------------------------+\n");
+			printf ("\t\t\t\t |  PASSWORD  : ");
+			scanf("%s", &user.password);
 							
-							system("cls");
-							printf("\n");
-							printf("\t\t\t\t +------------------------------------------+\n");
-							printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
-							printf("\t\t\t\t +------------------------------------------+\n");
-							printf("\t\t\t\t |                                          |\n");
-							printf("\t\t\t\t |      !! REGISTRASI TELAH BERHASIL !!     |\n");
-							printf("\t\t\t\t |                                          |\n");
-							printf("\t\t\t\t |            enter to continue             |\n");
-							printf("\t\t\t\t |                                          |\n");
-							printf("\t\t\t\t +------------------------------------------+\n");
+			system("cls");
+			printf("\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |      !! REGISTRASI TELAH BERHASIL !!     |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |            enter to continue             |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
 									
-							fprintf(kumpulandata,"\n%s",user.nama); //menyimpan data ke file
-				           		fprintf(kumpulandata,"\n%s",user.password);
-				           		fclose(kumpulandata);					
-							getch();
-							system("cls");			
-							goto awalmenu; 
-						break;
+			fprintf(kumpulandata,"\n%s",user.nama); //menyimpan data ke file
+			fprintf(kumpulandata,"\n%s",user.password);
+			fclose(kumpulandata);	//				
+			getch();
+			system("cls");			
+			goto awalmenu; 
+		break;
 						
-						default :
-							system("cls");
-							printf("\n");
-							printf("\t\t\t\t +------------------------------------------+\n");
-							printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
-							printf("\t\t\t\t +------------------------------------------+\n");
-							printf("\t\t\t\t |                                          |\n");
-							printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
-							printf("\t\t\t\t |                                          |\n");
-							printf("\t\t\t\t |              enter to continue           |\n");
-							printf("\t\t\t\t |                                          |\n");
-							printf("\t\t\t\t +------------------------------------------+\n");
-								getch();
-								goto awalmenu;
-						break;
-				    }
+		default :
+			system("cls");
+			printf("\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+		    printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |              enter to continue           |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			getch();
+			goto awalmenu;
+			break;
+			}
 }
 
 //-----------------------------------------------------------------------//
@@ -327,6 +341,43 @@ void menuUtama (void){
 			listSpesifikasi();
 		}
 }
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Menu Tanpa Login  <<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 10 Desember 2021 <<                        //
+// Nama Fungsi    : menuUtama2                                           //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan menu utama    //
+//                  dalam program ini			                 //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//-----------------------------------------------------------------------//
+void menuUtama2 (void){
+	menuUtama2:
+	system("cls");
+	printf("\n\n");
+	header();
+	int menuUtama;
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  [1] SPESIFIKASI LAPTOP                          ||\n");
+	printf("\t\t\t\t ||  [2] REKOMENDASI LAPTOP (Coming Soon)            ||\n");
+	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [5] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  [97] Coming Soon ~                              ||\n");
+	printf("\t\t\t\t ||  [98] Coming Soon ~                              ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); // Memilih Jasa yang diinginkan
+	scanf("%d", &menuUtama);
+	//memilih menu
+		if(menuUtama==1){
+			listSpesifikasi2();
+		}
+}
+
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>       	     Fungsi Pilihan Menu	 <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -579,6 +630,8 @@ void opsiKembali (void){
 		menuLaptop();
 	}   
 }	
+
+
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>      	    Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
