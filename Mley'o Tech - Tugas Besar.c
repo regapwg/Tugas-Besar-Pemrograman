@@ -405,42 +405,6 @@ void menuUtama2 (void){
 }
 
 //-----------------------------------------------------------------------//
-//>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Menu Tanpa Login  <<<<<<<<<<<<<//
-//-----------------------------------------------------------------------//
-//                         >> 10 Desember 2021 <<                        //
-// Nama Fungsi    : menuUtama2                                           //
-// Deskripsi      : fungsi ini berfungsi untuk menampilkan menu utama    //
-//                  dalam program ini			                 //	
-// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
-//-----------------------------------------------------------------------//
-void menuUtama2 (void){
-	menuUtama2:
-	system("cls");
-	printf("\n\n");
-	header();
-	int menuUtama;
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  [1] SPESIFIKASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [2] REKOMENDASI LAPTOP (Coming Soon)            ||\n");
-	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
-	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
-	printf("\t\t\t\t ||  [5] Coming Soon ~                               ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [97] Coming Soon ~                              ||\n");
-	printf("\t\t\t\t ||  [98] Coming Soon ~                              ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); // Memilih Jasa yang diinginkan
-	scanf("%d", &menuUtama);
-	//memilih menu
-		if(menuUtama==1){
-			listSpesifikasi2();
-		}
-}
-
-//-----------------------------------------------------------------------//
 //>>>>>>>>>>>       	     Fungsi Pilihan Menu	 <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 4 Desember 2021 <<           	         //
