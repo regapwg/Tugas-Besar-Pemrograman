@@ -72,7 +72,6 @@ FILE*kumpulandata; //pointer untuk mengakses file
 //                  serta pilihanmenu (input_program);                   //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga  - 2105551005              //
 //                                                                       //
-//                                              			 //
 //                         >> 5 Desember 2021 <<           	         //
 // Revisi 1       : Merubah isi fungsi yang digunakan hanya judulProgram //
 //                  dan menuLogin(); saja                                //
@@ -134,32 +133,34 @@ void judulProgram (void){
 // Revisi 1       : Menambahkan sistem waktu dan tanggal otomatis yang   //
 //                  diambil berdasarkan waktu server                     //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//                         >> 10 Desember 2021 <<           	         //
+// Revisi 2       : Menghapus penggunaan beberapa struct variabel        //
+//                  sebelumnya dan merapikan penulisan coding            //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
 //-----------------------------------------------------------------------//
 void header (void){
 	
-	struct waktu{    
-		int bulan, tanggal, tahun, jam, menit, detik;
-		}waktu;        
-								
-		time_t kalender; //Tipe data dari library time.h
-		time(&kalender);
-		clock_t pukul;
-		
+int bulan, tanggal, tahun, jam, menit, detik, hari;
+	
+		      					
+	time_t kalender; //Tipe data dari library time.h
+	time(&kalender);
 		
 		struct tm*data = localtime(&kalender); 	//Tipe data dan variabel untuk waktu system 
-			waktu.bulan = data->tm_mon + 1;
-			waktu.tanggal = data->tm_mday;
-			waktu.tahun = data->tm_year + 1900;
-			waktu.jam = data->tm_hour;
-			waktu.menit = data-> tm_min;
-			waktu.detik = data->tm_sec;
+			bulan = data->tm_mon + 1;
+			tanggal = data->tm_mday;
+			tahun = data->tm_year + 1900;
+			jam = data->tm_hour;
+			menit = data-> tm_min;
+			detik = data->tm_sec;
 	
 	printf("\t\t\t\t                      Mley'o Tech                      \n");
 	printf("\t\t\t\t         Jl. Disana GG. Disini No.666, Denpasar        \n");
 	printf("\t\t\t\t                     +62 81246810121                   \n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t %i/%i/%i", waktu.tanggal, waktu.bulan, waktu.tahun );
-	printf("\t\t\t\t       %02i:%i:%02i", waktu.jam, waktu.menit, waktu.detik );
+	printf("\t\t\t\t %i/%i/%i", tanggal, bulan, tahun );
+	printf("\t\t\t\t       %02i:%i:%02i", jam, menit, detik );
 	printf("\n\n");
 }
 
