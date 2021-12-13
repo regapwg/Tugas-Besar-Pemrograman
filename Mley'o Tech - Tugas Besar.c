@@ -52,7 +52,7 @@ void specLaptop1 (void); //fungsi menampilkan spec laptop 1
 
 void specLaptop2 (void); //fungsi menampilkan spec laptop 2
 
-void specLaptop3 (void); //fungsi menampilkan spec laptop 3
+void specLaptop3 (void); //fungsi menampilkan spec laptop 3 
 
 char username[20]; 
 char password [20];
