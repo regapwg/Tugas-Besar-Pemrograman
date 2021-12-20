@@ -444,12 +444,12 @@ void menuLaptop (void){
 	header();
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
-	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
-	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ++-------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                       |           ||\n");
+	printf("\t\t\t\t ||  <1>  Mackbook Air 2020               |           ||\n");
+	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                 |           ||\n");
+	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15             |          ||\n");
+	printf("\t\t\t\t ||                                       |           ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t ||  [Y]  Checkout                                   ||\n");
 	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
@@ -869,3 +869,143 @@ void specLaptop3 (void){
 	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 } 
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop4                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	ASUS TUF GAMING A15                      //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop4 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                   ** ASUS TUF GAMING A15 **                                         |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
+	printf ("\t |       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz         |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] AMD Ryzen™ 7 4800H Mobile Processor                                                           |\n");
+	printf ("\t |       (8C/16T, 12MB Cache, 4.2 GHz Max Boost)                                                       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8GB DDR4 SO-DIMM (expandable up to 32 GB), 512GB M.2 NVMe™ PCIe® 3.0 SSD                      |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       NVIDIA® GeForce® GTX 1660Ti, 6GB GDDR6                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop5                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	ASUS TUF DASH F15 2021                   //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop5 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                  ** ASUS TUF DASH F15 2021 **                                       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
+	printf ("\t |       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz,        |\n");
+	printf ("\t |       Adobe:47.34%, Value IPS-level, Optimus                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Intel® Core™ i7-11370H Processor 3.3 GHz, 4 cores                                             |\n");
+	printf ("\t |        (12M Cache, up to 4.8GHz)                                                                    |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8GB DDR4 on board, Max Capacity : 32GB                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       NVIDIA® GeForce RTX™ 3060 Laptop GPU, 6GB GDDR6                                               |\n");
+	printf ("\t |       With ROG Boost up to 1525MHz at 80W (85W with Dynamic Boost)                                  |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop6                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	HP Pavilion x360 Convertible             //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop6 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                              ** HP Pavilion x360 Convertible **                                     |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
+	printf ("\t |       14 inch diagonal FHD touch display FHD (1920 x 1080)        				  |\n");
+	printf ("\t |       Multitouch-enabled, IPS, edge-to-edge glass, micro-edge, 250 nits, 45% NTSC                   |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Intel® Evo™ platform 11th Gen Intel® Core™ i7 processor                                       |\n");
+	printf ("\t |       (up to 4.7 GHz with Intel® Turbo Boost Technology, 12 MB L3 cache, 4 cores)                   |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8 GB DDR4-3200 MHz RAM (2 x 4 GB), 512 GB SSD storage                                         |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       Intel® Iris® X? Graphics                                        			          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Windows 10 Home Single Language 64                                                            |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop5                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	HP Pavilion Gaming dk2068TX              //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop7 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                              ** HP Pavilion Gaming dk2068TX **                                      |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
+	printf ("\t |       15.6 inch diagonal, FHD (1920 x 1080)       					          |\n");
+	printf ("\t |       144 Hz, IPS, micro-edge, anti-glare, 250 nits, 45% NTSC                                       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Intel® Core™ i7-11370H                                                                        |\n");
+	printf ("\t |       (up to 4.8 GHz with Intel® Turbo Boost Technology, 12 MB L3 cache, 4 cores)                   |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       8 GB DDR4-3200 MHz RAM (1 x 8 GB), 512 GB PCIe® NVMe™ M.2 SSD                                 |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB GDDR6 dedicated)                   	          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Windows 10 Home Single Language 64                                                            |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
