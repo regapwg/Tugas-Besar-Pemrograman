@@ -7,12 +7,10 @@
 // Dibuat Oleh       : I Gede Khresna Adi Wedanta Beratha - 2105551038   //
 //                                                                       //
 //                         >> 5 Desember 2021 <<           	         //
-// 1. Nama Library   : stdbool.h                                         //
-//    Deskripsi      : berfungsi untuk menggunakan tipe data boolean     //
-// 2. Nama Tipe data : Char                                              //
+// 1. Nama Tipe data : Char                                              //
 //    Deskripsi      : berfungsi untuk menggunakan variabel berupa       //
 //                     karakter                                          //
-// 3. Nama Tipe data : Struct dengan variabel user, didalamnya terdapat  //
+// 2. Nama Tipe data : Struct dengan variabel user, didalamnya terdapat  //
 //                     variabel char                                     //
 //    Deskripsi      : berfungsi untuk menampung beberapa variabel       //
 //    Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005            //
@@ -25,7 +23,6 @@
 
 #include <stdio.h>     // library menu utama 
 #include <stdlib.h>   // Library System Clearscreen
-#include <stdbool.h> // library untuk tipe data boolean
 #include <time.h>   //Library Untuk Tanggal 
 
 void judulProgram (void); //fungsi tampilan judul program
@@ -194,9 +191,9 @@ char date[64];
 void menuLogin(void){
 	awalmenu: //
 	system("cls");
- 
-	bool status; //
-	int opsi;
+        #define true 1
+        #define false 0
+	int opsi, status;
 	
  	printf("\n\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
