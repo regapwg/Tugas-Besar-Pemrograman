@@ -51,6 +51,20 @@ void specLaptop2 (void); //fungsi menampilkan spec laptop 2
 
 void specLaptop3 (void); //fungsi menampilkan spec laptop 3
 
+void specLaptop4 (void); //fungsi menampilkan spec laptop 4
+
+void specLaptop5 (void); //fungsi menampilkan spec laptop 5
+
+void specLaptop6 (void); //fungsi menampilkan spec laptop 6
+
+void specLaptop7 (void); //fungsi menampilkan spec laptop 7
+
+void specLaptop8 (void); //fungsi menampilkan spec laptop 8
+
+void specLaptop9 (void); //fungsi menampilkan spec laptop 9
+
+void specLaptop10 (void); //fungsi menampilkan spec laptop 10
+
 char username[20]; 
 char password [20];
 
@@ -430,8 +444,12 @@ void menuUtama2 (void){
 //                  dan merubah beberapa nama variabel                   //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
-//                         >> 18 Desember 2021 <<           	         //
-// Revisi 5       : Menambahkan menu laptop baru                         //
+//                         >> 20 Desember 2021 <<           	         //
+// Revisi 5       : Menambahkan menu laptop baru dan memperbaiki         //
+//                  tampilan menu daftar laptop                          //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//									 //
+// Revisi 6       : Menambahkan menu laptop baru                         //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
 //-----------------------------------------------------------------------//
 void menuLaptop (void){
@@ -445,39 +463,47 @@ void menuLaptop (void){
 	system("cls");
 	printf("\n\n");
 	header();
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
-	printf("\t\t\t\t ++-------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                       |           ||\n");
-	printf("\t\t\t\t ||  <1>  Mackbook Air 2020               |           ||\n");
-	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                 |           ||\n");
-	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15             |          ||\n");
-	printf("\t\t\t\t ||  <4>                                             ||\n");
-	printf("\t\t\t\t ||  <5>                                             ||\n");
-	printf("\t\t\t\t ||  <6>                                             ||\n");
-	printf("\t\t\t\t ||  <7>                                             ||\n");
-	printf("\t\t\t\t ||  <8>   Lenovo Legion Y740                        ||\n");
-	printf("\t\t\t\t ||  <9>   Lenovo Legion 7i                          ||\n");
-	printf("\t\t\t\t ||  <10>  Lenovo Legion 5 Pro                       ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [Y]  Checkout                                   ||\n");
-	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  >> ingin checkout Laptop? : ");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||            DAFTAR LAPTOP                   |       HARGA      ||\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||  <1>  Mackbook Air 2020                    |   Rp.16.500.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <2>  Mackbook Pro M1                      |   Rp.20.900.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <3>  ASUS TUF Gaming F15                  |   Rp.18.500.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <4>  ASUS TUF Gaming A15                  |   Rp.16.899.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <5>  ASUS TUF Dash F15 2021               |   Rp.18.799.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <6>  HP Pavilion x360 Convertible         |   Rp.14.999.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <7>  HP Pavilion Gaming dk2068TX          |   Rp.15.499.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <8>  Lenovo Legion Y740                   |   Rp.28.899.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||                         [Y]  Checkout                         ||\n");
+	printf("\t\t\t  ||                         [T]  Kembali                          ||\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||  >> ingin checkout Laptop? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
-		printf("\t\t\t\t ||  >> Ingin checkout berapa unit Laptop? : ");
+		printf("\t\t\t  ||  >> Ingin checkout berapa unit Laptop? : ");
 		scanf("%d", &unit);
 		printf("\t\t\t\t ++--------------------------------------------------++\n\n");
 		
 		for(data=1; data<=unit; data++){  
 		printf("\n");               //perulangan dalam memilih unit Laptop
-		printf("\t\t\t\t >> Pilih Laptop ke-%d   : " , data);
+		printf("\t\t\t  >> Pilih Laptop ke-%d   : " , data);
 		scanf("%d", &menuLaptop[data]);
 		printf("\n");
-		printf("\t\t\t\t >> Jumlah Unit         : " , data);
+		printf("\t\t\t  >> Jumlah Unit         : " , data);
 		scanf("%i", &jumlah[data]);
 		printf("\n");
 			
@@ -494,16 +520,32 @@ void menuLaptop (void){
 				harga[data]= 18500000;
 				namaLaptop[data][data]= "ASUS TUF Gaming F15";	
 			}
+			else if(menuLaptop[data]==4){
+				harga[data]= 16899000;
+				namaLaptop[data][data]= "ASUS TUF Gaming A15";	
+			}
+			else if(menuLaptop[data]==5){
+				harga[data]= 18799000;
+				namaLaptop[data][data]= "ASUS TUF Dash F15 2021";	
+			}
+			else if(menuLaptop[data]==6){
+				harga[data]= 14999000;
+				namaLaptop[data][data]= "HP Pavilion x360 Convertible";	
+			}
+			else if(menuLaptop[data]==7){
+				harga[data]= 15499000;
+				namaLaptop[data][data]= "HP Pavilion Gaming dk2068TX ";	
+			}
 			else if(menuLaptop[data]==8){
-				harga[data]= 28999000;
+				harga[data]= 28899000;
 				namaLaptop[data][data]= "Lenovo Legion Y740";	
 			}
 			else if(menuLaptop[data]==9){
-				harga[data]= 30000000;
+				harga[data]= 29999000;
 				namaLaptop[data][data]= "Lenovo Legion 7i";	
 			}
 			else if(menuLaptop[data]==10){
-				harga[data]= 18200000;
+				harga[data]= 35200000;
 				namaLaptop[data][data]= "Lenovo Legion 5 Pro";	
 			}
 			else{
@@ -593,6 +635,10 @@ void menuLaptop (void){
 //                  yang digunakan untuk melihat spesifikasi laptop      //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                         >> 20 Desember 2021 <<           	         //
+// Revisi 1       : Menambahkan pilihan laptop baru dan memperbaiki      //
+//                  tampilan menu daftar laptop                          //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void listSpesifikasi (void){
 	menuSpec:;
@@ -603,26 +649,41 @@ void listSpesifikasi (void){
 	system("cls");
 	printf("\n\n");
 	header();
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
-	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
-	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [Y]  Melihat Spesifikasi                        ||\n");
-	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  >> Cek spesifikasi? : ");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||            DAFTAR LAPTOP                   |       HARGA      ||\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||  <1>  Mackbook Air 2020                    |   Rp.16.500.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <2>  Mackbook Pro M1                      |   Rp.20.900.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <3>  ASUS TUF Gaming F15                  |   Rp.18.500.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <4>  ASUS TUF Gaming A15                  |   Rp.16.899.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <5>  ASUS TUF Dash F15 2021               |   Rp.18.799.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <6>  HP Pavilion x360 Convertible         |   Rp.14.999.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <7>  HP Pavilion Gaming dk2068TX          |   Rp.15.499.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <8>  Lenovo Legion Y740                   |   Rp.28.899.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||                     [Y]  Lihat Spesifikasi                    ||\n");
+	printf("\t\t\t  ||                     [T]  Kembali                              ||\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||  >> Cek spesifikasi? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
 		
-		printf("\t\t\t\t ||  >> Silahkan pilih Laptop yang diinginkan  : ");
+		printf("\t\t\t  ||  >> Silahkan pilih Laptop yang diinginkan  : ");
 		scanf("%d", &unit);
-		printf("\t\t\t\t ++--------------------------------------------------++\n");
+		printf("\t\t\t\t  ++--------------------------------------------------++\n");
 			if (unit==1){
 				system("cls");
 				specLaptop1 ();
@@ -636,6 +697,41 @@ void listSpesifikasi (void){
 			else if(unit==3){
 				system("cls");
 				specLaptop3 ();
+				opsiKembali ();	
+			}
+			else if(unit==4){
+				system("cls");
+				specLaptop4 ();
+				opsiKembali ();	
+			}
+			else if(unit==5){
+				system("cls");
+				specLaptop5 ();
+				opsiKembali ();	
+			}
+			else if(unit==6){
+				system("cls");
+				specLaptop6 ();
+				opsiKembali ();	
+			}
+			else if(unit==7){
+				system("cls");
+				specLaptop7 ();
+				opsiKembali ();	
+			}
+			else if(unit==8){
+				system("cls");
+				specLaptop8 ();
+				opsiKembali ();	
+			}
+			else if(unit==9){
+				system("cls");
+				specLaptop9 ();
+				opsiKembali ();	
+			}
+			else if(unit==10){
+				system("cls");
+				specLaptop10 ();
 				opsiKembali ();	
 			}
 			else{
@@ -662,6 +758,10 @@ void listSpesifikasi (void){
 //                  laptop untuk user tanpa login                        //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 20 Desember 2021 <<           	         //
+// Revisi 1       : Menambahkan pilihan laptop baru dan memperbaiki      //
+//                  tampilan menu daftar laptop                          //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void listSpesifikasi2 (void){
 	menuSpec:;
@@ -672,26 +772,41 @@ void listSpesifikasi2 (void){
 	system("cls");
 	printf("\n\n");
 	header();
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                   DAFTAR LAPTOP                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
-	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
-	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [Y]  Melihat Spesifikasi                        ||\n");
-	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  >> Cek spesifikasi? : ");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||            DAFTAR LAPTOP                   |       HARGA      ||\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||  <1>  Mackbook Air 2020                    |   Rp.16.500.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <2>  Mackbook Pro M1                      |   Rp.20.900.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <3>  ASUS TUF Gaming F15                  |   Rp.18.500.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <4>  ASUS TUF Gaming A15                  |   Rp.16.899.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <5>  ASUS TUF Dash F15 2021               |   Rp.18.799.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <6>  HP Pavilion x360 Convertible         |   Rp.14.999.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <7>  HP Pavilion Gaming dk2068TX          |   Rp.15.499.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <8>  Lenovo Legion Y740                   |   Rp.28.899.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||                     [Y]  Lihat Spesifikasi                    ||\n");
+	printf("\t\t\t  ||                     [T]  Kembali                              ||\n");
+	printf("\t\t\t  ++---------------------------------------------------------------++\n");
+	printf("\t\t\t  ||  >> Cek spesifikasi? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
 		
-		printf("\t\t\t\t ||  >> Silahkan pilih Laptop yang diinginkan  : ");
+		printf("\t\t\t  ||  >> Silahkan pilih Laptop yang diinginkan  : ");
 		scanf("%d", &unit);
-		printf("\t\t\t\t ++--------------------------------------------------++\n");
+		printf("\t\t\t  ++--------------------------------------------------++\n");
 			if (unit==1){
 				system("cls");
 				specLaptop1 ();
@@ -705,6 +820,41 @@ void listSpesifikasi2 (void){
 			else if(unit==3){
 				system("cls");
 				specLaptop3 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==4){
+				system("cls");
+				specLaptop4 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==5){
+				system("cls");
+				specLaptop5 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==6){
+				system("cls");
+				specLaptop6 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==7){
+				system("cls");
+				specLaptop7 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==8){
+				system("cls");
+				specLaptop8 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==9){
+				system("cls");
+				specLaptop9 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==10){
+				system("cls");
+				specLaptop10 ();
 				opsiKembali2 ();	
 			}
 			else{
@@ -1045,12 +1195,12 @@ void specLaptop7 (void){
 void specLaptop8 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                   * Lenovo Legion Y740 *                                          |\n");
+	printf ("\t |                                   * Lenovo Legion Y740 *                                            |\n");
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t | SPESIFIKASI :                                                                                       |\n");
 	printf ("\t |   [1] Display                                                                                       |\n");
-	printf ("\t |       15.6 inch FHD (1920 x 1080), 72% color gamut, NVIDIA ® G-SYNC      			                  |\n");
+	printf ("\t |       15.6 inch FHD (1920 x 1080), 72% color gamut, NVIDIA ® G-SYNC      			          |\n");
 	printf ("\t |       Dolby Vision-enabled, 144 Hz, 300 nits                                                        |\n");
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t |   [2] 8th Gen Intel® Core™ i7-8750H processor                                                       |\n");
@@ -1059,7 +1209,7 @@ void specLaptop8 (void){
 	printf ("\t |       16 GB DDR4 2666 MHz, Up to 512 GB PCIe NVMe, Up to 1 TB HDD 7200RPM                           |\n");
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA® GeForce® RTX 2060                                                   	              |\n");
+	printf ("\t |       NVIDIA® GeForce® RTX 2060                                                   	          |\n");
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
 	printf ("\t |       Windows 10 Home                                                                               |\n");
@@ -1079,7 +1229,7 @@ void specLaptop8 (void){
 void specLaptop9 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                    * Lenovo Legion 7i *                                           |\n");
+	printf ("\t |                                    * Lenovo Legion 7i *                                             |\n");
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t | SPESIFIKASI :                                                                                       |\n");
@@ -1113,7 +1263,7 @@ void specLaptop9 (void){
 void specLaptop10 (void){
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                  * Lenovo Legion 5 Pro *                                          |\n");
+	printf ("\t |                                  * Lenovo Legion 5 Pro *                                            |\n");
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 	printf ("\t | SPESIFIKASI :                                                                                       |\n");
