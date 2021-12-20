@@ -429,6 +429,10 @@ void menuUtama2 (void){
 // Revisi 4       : Merapikan tampilan menu pada bagian daftar bank      //
 //                  dan merubah beberapa nama variabel                   //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 20 Desember 2021 <<           	         //
+// Revisi 5       : Menambahkan alert pada tampilan pemesanan            //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
 //-----------------------------------------------------------------------//
 
 void menuLaptop (void){
@@ -449,7 +453,13 @@ void menuLaptop (void){
 	printf("\t\t\t\t ||  <1>  Mackbook Air 2020                          ||\n");
 	printf("\t\t\t\t ||  <2>  Mackbook Pro M1                            ||\n");
 	printf("\t\t\t\t ||  <3>  ASUS TUF Gaming F15                        ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  <4>                                             ||\n");
+	printf("\t\t\t\t ||  <5>                                             ||\n");
+	printf("\t\t\t\t ||  <6>                                             ||\n");
+	printf("\t\t\t\t ||  <7>                                             ||\n");
+	printf("\t\t\t\t ||  <8>   Lenovo Legion Y740                        ||\n");
+	printf("\t\t\t\t ||  <9>   Lenovo Legion 7i                          ||\n");
+	printf("\t\t\t\t ||  <10>  Lenovo Legion 5 Pro                       ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t ||  [Y]  Checkout                                   ||\n");
 	printf("\t\t\t\t ||  [T]  Kembali                                    ||\n");
@@ -483,6 +493,18 @@ void menuLaptop (void){
 			else if(menuLaptop[data]==3){
 				harga[data]= 18500000;
 				namaLaptop[data][data]= "ASUS TUF Gaming F15";	
+			}
+			else if(menuLaptop[data]==8){
+				harga[data]= 28999000;
+				namaLaptop[data][data]= "Lenovo Legion Y740";	
+			}
+			else if(menuLaptop[data]==9){
+				harga[data]= 30000000;
+				namaLaptop[data][data]= "Lenovo Legion 7i";	
+			}
+			else if(menuLaptop[data]==10){
+				harga[data]= 18200000;
+				namaLaptop[data][data]= "Lenovo Legion 5 Pro";	
 			}
 			else{
 				printf ("\t\t\t\t >> Masukan Pilihan Yang Sesuai! << ");
@@ -869,3 +891,106 @@ void specLaptop3 (void){
 	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 } 
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop8                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	Lenovo Legion Y740                       //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop8 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                   * Lenovo Legion Y740 *                                          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Display                                                                                       |\n");
+	printf ("\t |       15.6 inch FHD (1920 x 1080), 72% color gamut, NVIDIA ® G-SYNC      			                  |\n");
+	printf ("\t |       Dolby Vision-enabled, 144 Hz, 300 nits                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] 8th Gen Intel® Core™ i7-8750H processor                                                       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       16 GB DDR4 2666 MHz, Up to 512 GB PCIe NVMe, Up to 1 TB HDD 7200RPM                           |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       NVIDIA® GeForce® RTX 2060                                                   	              |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Windows 10 Home                                                                               |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop9                                          //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop Lenovo Legion 7i                         //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop9 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                    * Lenovo Legion 7i *                                           |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Display                                                                                       |\n");
+	printf ("\t |       15,6 inch FHD (1920 x 1080), WVA, 300 nits, 144Hz, hingga 5ms untuk waktu respon              |\n");
+	printf ("\t |       100% Adobe sRGB, Dolby Vision™ supported                                                      |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] 10th Gen Intel® Core™ i7-10870H                                                               |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       32GB 3200MHz DDR4, 1TB M.2 NVMe PCIe SSD (RAID 0)                                             |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       NVIDIA®GeForce RTX™ 2060 with Max-Q Design                                                    |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Up to Windows 11 Pro                                                                          |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 20 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop10                                         //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	Lenovo Legion 5 Pro                      //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop10 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                  * Lenovo Legion 5 Pro *                                          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Display                                                                                       |\n");
+	printf ("\t |       16 inch QHD (2560 x 1600) IPS, 16:10, 500 nits, 165Hz / 3ms response time, 100% sRGB, VESA    |\n");
+	printf ("\t |       DisplayHDR™-certified, Dolby Vision™-enabled, NVIDIA®G-SYNC®, AMD Freesync™                   |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Up to AMD Ryzen™ 7 5800H                                                                      |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       Up to 16GB, Up to 2TB M.2 NVMe PCIe SSD                                                       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       Up to NVIDIA®GeForce RTX™ 3070 Laptop GPU 8GB GDDR6, listed boost clock 1560MHz               |\n");
+	printf ("\t |       achieved boost clock 1620MHz, maximum graphics power 140W                                     |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Up to Windows 11 Pro                                                                          |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
