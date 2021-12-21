@@ -37,6 +37,8 @@ void menuUtama2 (void); //fungsi tampilan menu utama tanpa login
 
 void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, const char*namaLaptop[100][25], int totalTagihan, int data, int unit);
 
+void keranjangBayar(void);
+
 void menuLaptop (void); //fungsi tampilan menu laptop
 
 void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
@@ -367,7 +369,7 @@ void menuUtama (void){
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ||  [1] DAFTAR LAPTOP                               ||\n");
 	printf("\t\t\t\t ||  [2] SPESIFIKASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [3] KERANJANG BELANJA                           ||\n");
 	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
@@ -379,6 +381,9 @@ void menuUtama (void){
 		}
 		else if(menuUtama==2){
 			listSpesifikasi();
+		}
+		else if(menuUtama==3){
+			keranjangBayar();
 		}
 }
 
