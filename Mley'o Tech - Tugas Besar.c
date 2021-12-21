@@ -656,6 +656,110 @@ void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, co
 }
 
 //-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	 Fungsi Kerajang Bayar     	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 21 Desember 2021 <<                   	 //
+// Nama Fungsi    : keranjangBayar                                       //
+// Deskripsi      : berfungsi untuk melakukan checkout pembayaran        //
+//                  pada keranjang pembayaran                            //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
+void keranjangBayar (void){
+	keranjangBayar:;
+	system("cls");
+	header();
+	int kembali, pilihan;
+	char benar;
+	FILE*keranjang;
+	keranjang=fopen(user.nama,"r");
+	
+	if(keranjang!=NULL){
+		char riwayat[255];
+		
+		while(fgets(riwayat, 255, keranjang)){
+			printf("%s", riwayat);
+		}
+		
+	fclose(keranjang);
+		
+		getch();
+		system("cls");
+		header();
+		printf("\t\t\t\t ++--------------------------------------------------++\n");
+		printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
+		printf("\t\t\t\t ++--------------------------------------------------++\n");
+		printf("\t\t\t\t ||                                                  ||\n");
+		printf("\t\t\t\t ||  [1] Konfirmasi Pesanan                          ||\n");
+		printf("\t\t\t\t ||  [2] Kembali                     	             ||\n");
+		printf("\t\t\t\t ||                                                  ||\n");
+		printf("\t\t\t\t ++--------------------------------------------------++\n");
+		printf("\t\t\t\t ||Silahkan Pilih : ");
+		scanf ("%d",&pilihan);
+		
+		if (pilihan==1){
+		    	konfirmasi:;
+		    	
+		        char bank[20],nama[60];
+		        int rekening, jumlah;
+		        
+	 
+		        printf("\t\t\t\t Bank             : "); 
+				fflush(stdin);
+		        gets(bank);
+		        printf("\t\t\t\t No Rekening Anda : "); 
+				fflush(stdin);
+		        scanf("%d", &rekening);
+		        printf("\t\t\t\t Atas Nama        : "); 
+				fflush(stdin);
+		        gets(nama);             
+		        printf("\t\t\t\t Jumlah Transfer  : "); 
+				fflush(stdin);
+		        scanf("%d", &jumlah);
+		        printf("\t\t\t\t Apakah data yang diinputkan sudah sesuai? (y/n) : \n");
+		       	scanf("%s",&benar);
+		        if(benar=='y'||benar=='Y'){
+			        printf("\t\t\t\t ++--------------------------------------------------++\n");
+			        printf("\t\t\t\t     >> Terima kasih, pesanan anda sedang diproses! <<\n\n");
+			        
+			        FILE* cekPembayaran;
+				    cekPembayaran=fopen(user.nama, "a+");
+				    			
+				    fprintf (cekPembayaran, "\t\t\t\t Bank                         : %s\n",bank);
+				    fprintf (cekPembayaran, "\t\t\t\t No Rekening                  : %d\n",rekening);
+				    fprintf (cekPembayaran, "\t\t\t\t Atas Nama                    : %s\n",nama);
+				    fprintf (cekPembayaran, "\t\t\t\t Jumlah Transfer              : %d\n",jumlah);
+				    fprintf (cekPembayaran, "\t\t\t\t ++--------------------------------------------------++\n");
+				    fclose  (cekPembayaran);
+				  
+				  
+					FILE * keranjang;
+					keranjang=fopen(user.nama,"w");
+					fprintf (keranjang,"\t\t\t\t\t >>>>Keranjang anda Kosong, Silahkan Lakukan Pemesanan!<<<");
+					fclose (keranjang);
+                    system("pause");
+			    } 
+			    else{
+			    	printf("\n\n\t\t\t   Konfirmasi dibatalkan !\n\n");
+			    	goto keranjangBayar;
+			    }
+		    }
+		    else if(pilihan==2){
+		        menuUtama();
+		    }
+		    else{
+		        printf("\t\t\t\t Masukan Data Dengan Benar!");
+		        goto keranjangBayar;
+		    }
+	    }
+	 
+	    else{
+	    	printf("\t\t\t\t\t >>>Keranjang anda Kosong, Silahkan Lakukan Pemesanan!<<<");
+	    	getch();
+	    	menuUtama();
+	    }
+}
+
+//-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>       	  Fungsi List Spesifikasi	 <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 6 Desember 2021 <<           	   	 //
