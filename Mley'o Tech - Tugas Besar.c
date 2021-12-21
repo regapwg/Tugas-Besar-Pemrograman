@@ -35,6 +35,8 @@ void menuUtama (void); //fungsi tampilan menu utama ketika login
 
 void menuUtama2 (void); //fungsi tampilan menu utama tanpa login
 
+void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, const char*namaLaptop[100][25], int totalTagihan, int data, int unit);
+
 void menuLaptop (void); //fungsi tampilan menu laptop
 
 void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
@@ -598,14 +600,14 @@ void menuLaptop (void){
 				printf("\t\t\t   >> Alamat        : "); fflush(stdin);
 				gets(alamat);
 				printf("\t\t\t   -----------------------------------------------------------------\n\n");
-			    	printf("\t\t\t                     >> Data Berhasil Tersimpan <<\n\n");
+			    	printf("\t\t\t        >> Data Berhasil Tersimpan Pada Keranjang Pemesanan! <<\n\n");
 			    	printf("\t\t\t   Silahkan Lakukan Pembayaran Melalui Salah Satu Rekening Berikut : \n\n");
 			    	printf("\t\t\t   CIMB Niaga     : 2105551038");
 			    	printf("\t         Bank Syariah   : 2105551005\n");
 			    	printf("\t\t\t   BCA            : 2105551038");
 			    	printf("\t         DANA           : 2105551005\n");
-			    	
-			    
+				printf("\t\t\t   Setelah Melakukan pembayaran, segera lakukan validasi pembayaran! \n\n");
+			    	notaPembayaran (namaCustomer, HP, alamat, namaLaptop, totalTagihan, data,unit);		    
 			    	getchar();
 			    	menuUtama();
 			}
@@ -624,6 +626,33 @@ void menuLaptop (void){
 		menuUtama();
 		getch();
 	}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	 Fungsi Nota Pembayaran     	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 21 Desember 2021 <<                   	 //
+// Nama Fungsi    : notaPembayaran                                       //
+// Deskripsi      : berfungsi untuk mengambil data untuk dijadikan       //
+//                  nota customer                                        //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//-----------------------------------------------------------------------//
+void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, const char*namaLaptop[100][25], int totalTagihan, int data, int unit){
+
+    FILE* notacust;
+    
+    notacust=fopen(user.nama, "w");
+
+  	fprintf (notacust, "\t\t\t   Nama Customer   : %s\n",namaCustomer);                
+    fprintf (notacust, "\t\t\t   No Handphone    : %s\n",HP);                
+    fprintf (notacust, "\t\t\t   Alamat Rumah    : %s\n",alamat);  
+    fprintf (notacust, "\t\t\t   -----------------------------------------------------------------\n\n"); 
+ 	for(data=1; data<=unit; data++){
+ 		 
+	fprintf (notacust, "\t\t\t   >> %s\n",namaLaptop[data][data]);     
+ 	}
+    fprintf (notacust, "\t\t\t   TOTAL TAGIHAN : Rp.%d   ", totalTagihan);
+    fclose  (notacust); 
 }
 
 //-----------------------------------------------------------------------//
