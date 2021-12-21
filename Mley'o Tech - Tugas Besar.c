@@ -373,7 +373,7 @@ void menuUtama (void){
 	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); // Memilih Jasa yang diinginkan
+	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); 
 	scanf("%d", &menuUtama);
 	//memilih menu
 		if(menuUtama==1){
@@ -415,7 +415,7 @@ void menuUtama2 (void){
 	printf("\t\t\t\t ||  [97] Coming Soon ~                              ||\n");
 	printf("\t\t\t\t ||  [98] Coming Soon ~                              ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); // Memilih Jasa yang diinginkan
+	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); 
 	scanf("%d", &menuUtama);
 	//memilih menu
 		if(menuUtama==1){
@@ -501,7 +501,7 @@ void menuLaptop (void){
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
-		printf("\t\t\t  ||  >> Ingin checkout berapa unit Laptop? : ");
+		printf("\t\t\t  ||  >> Ingin checkout berapa jenis Laptop? : ");
 		scanf("%d", &unit);
 		printf("\t\t\t\t ++--------------------------------------------------++\n\n");
 		
