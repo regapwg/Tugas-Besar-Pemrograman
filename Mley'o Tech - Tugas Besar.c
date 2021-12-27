@@ -24,6 +24,7 @@
 #include <stdio.h>     // library menu utama 
 #include <stdlib.h>   // Library System Clearscreen
 #include <time.h>   //Library Untuk Tanggal 
+#include <string.h> //library untuk strcat
 
 void judulProgram (void); //fungsi tampilan judul program
 
@@ -31,15 +32,23 @@ void header(void); //fungsi untuk menampilkan header program
 
 void menuLogin (void); //fungsi login
 
+void login (void); //fungsi login
+
+void registrasi (void);//fungsi registrasi
+
 void menuUtama (void); //fungsi tampilan menu utama ketika login
 
 void menuUtama2 (void); //fungsi tampilan menu utama tanpa login
 
+void kebijakanToko (void); //fungsi untuk menampilkan aturan yang berlaku bagi konsumen
+
 void tentangKami (void); //fungsi untuk menampilkan informasi tentang kami 
 
-void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, const char*namaLaptop[100][25], int totalTagihan, int data, int unit);
+void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, const char*namaLaptop[100][25], int totalTagihan, int data, int unit); //fungsi menyali nota pembayaran
 
-void keranjangBayar(void);
+void keranjangBayar(void); //fungsi untuk mengambil data nota kemudian melanjutkan untuk validasi checkout
+
+void historyPemesanan(void);//fungsi untuk menampilkan history pemesanan 
 
 void menuLaptop (void); //fungsi tampilan menu laptop
 
@@ -47,9 +56,9 @@ void rekomendasiLaptop (void); //fungsi tampilan menu rekomendasi laptop (login)
 
 void rekomendasiLaptop2 (void); //fungsi tampilan menu rekomendasi laptop (tanpa login)
 
-void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
+void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop (login)
 
-void listSpesifikasi2 (void); //fungsi tampilan list spesifikasi laptop tanpa login
+void listSpesifikasi2 (void); //fungsi tampilan list spesifikasi laptop (tanpa login)
 
 void opsiKembali (void); //fungsi opsi kembali untuk fungsi spesifikasi (login)
 
@@ -75,6 +84,10 @@ void specLaptop9 (void); //fungsi menampilkan spec laptop 9
 
 void specLaptop10 (void); //fungsi menampilkan spec laptop 10
 
+void specLaptop11 (void); //fungsi menampilkan spec laptop 11
+
+void specLaptop12 (void); //fungsi menampilkan spec laptop 12
+
 char username[20]; 
 char password [20];
 
@@ -84,6 +97,8 @@ struct Data{
 }user;
 
 FILE*kumpulandata; //pointer untuk mengakses file
+
+char history[100]="history";
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>                   Program Utama                 <<<<<<<<<<<//
@@ -213,11 +228,10 @@ char date[64];
 //-----------------------------------------------------------------------//
 
 void menuLogin(void){
-	awalmenu: //
+	awalmenu: 
 	system("cls");
-        #define true 1
-        #define false 0
-	int opsi, status;
+       
+	int opsi;
 	
  	printf("\n\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
@@ -228,8 +242,8 @@ void menuLogin(void){
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ||                   2 | Login                      ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||                   3 | Daftar                     ||\n");		
-	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||                   3 | Daftar                     ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");	
 	printf("\t\t\t\t ++--------------------------------------------------++\n");	
 	printf("\n");
 	printf("\t\t\t\t >> Input Pilihan : ");
@@ -239,8 +253,90 @@ void menuLogin(void){
 		case 1:
 			menuUtama2();
 		break;		
-	    case 2: //log-in setelah membuat akun
-			
+	        case 2: //log-in setelah membuat akun
+			login();
+		break;		
+		case 3: //untuk melakukan registrasi apabila belum memiliki akun
+			registrasi();
+		break;	
+		default :
+			system("cls");
+			printf("\n\n\n\n\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+		   	printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |              enter to continue           |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			getch();
+			goto awalmenu;
+		break;
+			}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem registrasi   <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 5 Desember 2021 <<                         //
+// Nama Fungsi    : registrasi                                           //
+// Deskripsi      : fungsi ini berfungsi untuk melakukan registrasi      //
+//                  akun sebelum masuk ke menu utama                     //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void registrasi (void){
+		system("cls");
+			kumpulandata=fopen("user","a+"); //membuka file
+				
+			printf ("\n\n");
+			header(); 
+			printf ("\n");
+			printf ("\t\t\t\t\t         USERNAME  : ");
+			scanf("%s", &user.nama);
+			printf ("\n");
+			printf ("\t\t\t\t\t         PASSWORD  : ");
+			scanf("%s", &user.password);
+							
+			system("cls");
+			printf("\n\n\n\n\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |      !! REGISTRASI TELAH BERHASIL !!     |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |            enter to continue             |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+									
+			fprintf(kumpulandata,"\n%s",user.nama); //menyimpan data ke file
+			fprintf(kumpulandata,"\n%s",user.password);
+			fclose(kumpulandata);	//				
+			getch();
+			system("cls");			
+			menuLogin(); 
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem registrasi   <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 5 Desember 2021 <<           	         //
+// Nama Fungsi    : registrasi                                           //
+// Deskripsi      : fungsi ini berfungsi untuk melakukan login           //
+//                  akun sebelum masuk ke menu utama                     //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+// Revisi 2       : Memperbaiki tampilan pada menu login dan daftar      //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
+void login (void){
+			#define true 1
+            #define false 0
+			int status;
+			 
 								
 			system("cls");
 			kumpulandata = fopen("user","r+"); //
@@ -282,7 +378,7 @@ void menuLogin(void){
 		else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
 							    		
 			system("cls");
-			printf("\n");
+			printf("\n\n\n\n\n");
 			printf("\t\t\t\t +------------------------------------------+\n");
 			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
 			printf("\t\t\t\t +------------------------------------------+\n");
@@ -293,58 +389,8 @@ void menuLogin(void){
 			printf("\t\t\t\t |                                          |\n");
 			printf("\t\t\t\t +------------------------------------------+\n");	
 			getch();
-			goto awalmenu;
+			menuLogin();
 			} 
-		break;
-						
-		case 3: //untuk melakukan registrasi apabila belum memiliki akun
-			system("cls");
-			kumpulandata=fopen("user","a+"); //membuka file
-				
-			printf ("\n\n");
-			header(); 
-			printf ("\n");
-			printf ("\t\t\t\t\t         USERNAME  : ");
-			scanf("%s", &user.nama);
-			printf ("\t\t\t\t\t         PASSWORD  : ");
-			scanf("%s", &user.password);
-							
-			system("cls");
-			printf("\n");
-			printf("\t\t\t\t +------------------------------------------+\n");
-			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
-			printf("\t\t\t\t +------------------------------------------+\n");
-			printf("\t\t\t\t |                                          |\n");
-			printf("\t\t\t\t |      !! REGISTRASI TELAH BERHASIL !!     |\n");
-			printf("\t\t\t\t |                                          |\n");
-			printf("\t\t\t\t |            enter to continue             |\n");
-			printf("\t\t\t\t |                                          |\n");
-			printf("\t\t\t\t +------------------------------------------+\n");
-									
-			fprintf(kumpulandata,"\n%s",user.nama); //menyimpan data ke file
-			fprintf(kumpulandata,"\n%s",user.password);
-			fclose(kumpulandata);	//				
-			getch();
-			system("cls");			
-			goto awalmenu; 
-		break;
-						
-		default :
-			system("cls");
-			printf("\n");
-			printf("\t\t\t\t +------------------------------------------+\n");
-			printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
-			printf("\t\t\t\t +------------------------------------------+\n");
-		   	printf("\t\t\t\t |                                          |\n");
-			printf("\t\t\t\t |           !! INPUT ANDA SALAH !!         |\n");
-			printf("\t\t\t\t |                                          |\n");
-			printf("\t\t\t\t |              enter to continue           |\n");
-			printf("\t\t\t\t |                                          |\n");
-			printf("\t\t\t\t +------------------------------------------+\n");
-			getch();
-			goto awalmenu;
-		break;
-			}
 }
 
 //-----------------------------------------------------------------------//
@@ -361,6 +407,11 @@ void menuLogin(void){
 // Revisi 1       : Merapikan tampilan menu pada fungsi menu             //
 //                  Mengganti nama fungsi menjadi menuUtama              //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 26 Desember 2021 <<                        //
+// Revisi 2       : Menemabhakan menu kebijakan toko, history, tentang   //
+//                  kami                                                 //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 
 void menuUtama (void){
@@ -375,10 +426,14 @@ void menuUtama (void){
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ||  [1] DAFTAR LAPTOP                               ||\n");
 	printf("\t\t\t\t ||  [2] SPESIFIKASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [3] KERANJANG BELANJA                           ||\n");
-	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [3] REKOMENDASI LAPTOP                          ||\n");
+	printf("\t\t\t\t ||  [4] KERANJANG BELANJA                           ||\n");
+	printf("\t\t\t\t ||  [5] HISTORY PEMESANAN                           ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||  [6] KEBIJAKAN TOKO                              ||\n");
+	printf("\t\t\t\t ||  [7] TENTANG KAMI                                ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");;
 	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); 
 	scanf("%d", &menuUtama);
 	//memilih menu
@@ -389,7 +444,19 @@ void menuUtama (void){
 			listSpesifikasi();
 		}
 		else if(menuUtama==3){
+			rekomendasiLaptop();
+		}
+		else if(menuUtama==4){
 			keranjangBayar();
+		}
+		else if(menuUtama==5){
+			historyPemesanan();
+		}
+		else if(menuUtama==6){
+			kebijakanToko();
+		}
+		else if(menuUtama==7){
+			tentangKami();
 		}
 }
 
@@ -401,6 +468,10 @@ void menuUtama (void){
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan menu utama    //
 //                  dalam program user tanpa login                       //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//                         >> 26 Desember 2021 <<                        //
+// Revisi 2       : Menemabhakan menu kebijakan toko, history, tentang   //
+//                  kami                                                 //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void menuUtama2 (void){
 	menuUtama2:
@@ -413,13 +484,12 @@ void menuUtama2 (void){
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ||  [1] SPESIFIKASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [2] REKOMENDASI LAPTOP (Coming Soon)            ||\n");
-	printf("\t\t\t\t ||  [3] Coming Soon ~                               ||\n");
-	printf("\t\t\t\t ||  [4] Coming Soon ~                               ||\n");
-	printf("\t\t\t\t ||  [5] Coming Soon ~                               ||\n");
+	printf("\t\t\t\t ||  [2] REKOMENDASI LAPTOP                          ||\n");
+	printf("\t\t\t\t ||  [3] KERANJANG BELANJA                           ||\n");
+	printf("\t\t\t\t ||  [4] HISTORY PEMESANAN                           ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [97] Coming Soon ~                              ||\n");
-	printf("\t\t\t\t ||  [98] Coming Soon ~                              ||\n");
+	printf("\t\t\t\t ||  [5] LOGIN                                       ||\n");
 	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); 
 	scanf("%d", &menuUtama);
@@ -427,6 +497,118 @@ void menuUtama2 (void){
 		if(menuUtama==1){
 			listSpesifikasi2();
 		}
+		else if(menuUtama==2){
+			rekomendasiLaptop2();
+		}
+		else if(menuUtama==3){
+			system("cls");
+			printf("\n\n\n");
+			printf("\t\t\t >>  Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+			getch();
+			menuLogin();
+		}
+		else if(menuUtama==4){
+			system("cls");
+			printf("\n\n\n");
+			printf("\t\t\t >>  Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+			getch();
+			menuLogin();
+		}
+		else if(menuUtama==5){
+			menuLogin();
+		}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	Fungsi historyPemesanan      	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 26 Desember 2021 <<                   	 //
+// Nama Fungsi    : historyPemesanan                                     //
+// Deskripsi      : berfungsi untuk mencetak history pemesanan           //
+//                                                                       //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//-----------------------------------------------------------------------//
+
+void historyPemesanan(void){
+	system("cls");
+	header();
+	FILE * historyPembayaran;
+    historyPembayaran=fopen(history, "r"); 
+    
+	if(historyPembayaran==NULL){
+		strcat(history,user.nama);
+	}
+	
+    historyPembayaran=fopen(history, "r"); 
+    if(historyPembayaran!=NULL){
+		char buff[255];
+    	while(fgets(buff, sizeof(buff), historyPembayaran)){
+    		printf("%s ",buff);
+    	}
+    }
+    else{
+    	printf("\n\n");
+    	printf("\t\t\t\t   >>Anda Belum Pernah Melakukan Transaksi Sebelumnya<<");
+    }
+    	fclose(historyPembayaran);
+    	getch();
+    	menuUtama();
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>             Fungsi Kebijakan Toko               <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 6 Desember 2021 <<           	         //
+// Nama Fungsi    : kebijakanToko                                        //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan isi dari      //
+//                  kebijakan toko                                       //	
+//                                                                       //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//-----------------------------------------------------------------------//
+void kebijakanToko (void){
+	system("cls");
+	header();
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                  KEBIJAKAN TOKO                  ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||  Setiap melakukan transaksi pada aplikasi  kami, ||\n");
+	printf("\t\t\t\t ||  kami  anggap Anda telah membaca dan  menyetujui ||\n");
+	printf("\t\t\t\t ||  segala bentuk syarat dan ketentuan yang berlaku ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t || >> Pesanan  akan kami proses apabila anda  telah ||\n");
+	printf("\t\t\t\t ||    melakukan   validasi   checkout   pada   menu ||\n");
+	printf("\t\t\t\t ||    KERANJANG BELANJA.                            ||\n");
+        printf("\t\t\t\t ||                                                  ||\n");
+        printf("\t\t\t\t || >> Pastikan  melakukan transfer  dengan  nominal ||\n");
+ 	printf("\t\t\t\t ||    yang   tertera.  kelebihan  transfer    bukan ||\n");
+ 	printf("\t\t\t\t ||    tanggung   jawab   kami. kami tidak  menerima ||\n");
+ 	printf("\t\t\t\t ||    pengajuan   refund  uang  dari transfer yang  ||\n");
+ 	printf("\t\t\t\t ||    kelebihan.                                    ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");    
+	printf("\t\t\t\t || >> Kami hanya bekerja sama dengan ekspedisi JNE. ||\n");
+        printf("\t\t\t\t ||    FREE ONGKIR menggunakan  packing  buble  wrap ||\n");
+	printf("\t\t\t\t ||    dan   kayu   serta    kami    juga    memilih ||\n");
+	printf("\t\t\t\t ||    pengantaran berasuransi agar barang anda aman.||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t || >> Masa Garansi berlaku dimulai sejak anda telah ||\n");
+	printf("\t\t\t\t ||    melakukan  validasi checkout dan pengembalian ||\n");
+	printf("\t\t\t\t ||    barang  harus  disertai  box  lengkap,  kartu ||\n");
+	printf("\t\t\t\t ||    garansi, dan nota pembelian.                  ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t || >> Garansi Toko hanya berlaku selama 3 hari, dan ||\n");
+	printf("\t\t\t\t ||    garansi  resmi  distributor  tergantung  dari ||\n");
+	printf("\t\t\t\t ||    barang yang anda beli.                        ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t || >> Ongkos  claim  garansi, baik biaya pengiriman ||\n");
+	printf("\t\t\t\t ||    barang,   biaya   sparepart,  dll  ditanggung ||\n");
+	printf("\t\t\t\t ||    oleh pembeli.                                 ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");	
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\n\n");
+	printf("\t\t\t\t ++-----   Enter untuk Kembali ke Menu Utama    -----++\n");
+	getch();
+	menuUtama();
 }
 
 //-----------------------------------------------------------------------//
@@ -882,16 +1064,19 @@ void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, co
     FILE* notacust;
     
     notacust=fopen(user.nama, "w");
-
-  	fprintf (notacust, "\t\t\t   Nama Customer   : %s\n",namaCustomer);                
-    fprintf (notacust, "\t\t\t   No Handphone    : %s\n",HP);                
-    fprintf (notacust, "\t\t\t   Alamat Rumah    : %s\n",alamat);  
-    fprintf (notacust, "\t\t\t   -----------------------------------------------------------------\n\n"); 
+    
+	fprintf (notacust, "\n\n");  
+	fprintf (notacust, "\t\t\t\t +----------------------------------------------------+\n");  
+  	fprintf (notacust, "\t\t\t\t |   Nama Customer   : %s\n",namaCustomer);                
+    fprintf (notacust, "\t\t\t\t |   No Handphone    : %s\n",HP);                
+    fprintf (notacust, "\t\t\t\t |   Alamat Rumah    : %s\n",alamat);  
+    fprintf (notacust, "\t\t\t\t +----------------------------------------------------+\n"); 
  	for(data=1; data<=unit; data++){
  		 
-	fprintf (notacust, "\t\t\t   >> %s\n",namaLaptop[data][data]);     
+	fprintf (notacust, "\t\t\t\t |   >> %s\n",namaLaptop[data][data]);     
  	}
-    fprintf (notacust, "\t\t\t   TOTAL TAGIHAN : Rp.%d   ", totalTagihan);
+ 	fprintf (notacust, "\t\t\t\t |                                                     \n"); 
+    fprintf (notacust, "\t\t\t\t |   TOTAL TAGIHAN : Rp.%d   \n", totalTagihan);
     fclose  (notacust); 
 }
 
@@ -1278,7 +1463,7 @@ void listSpesifikasi2 (void){
 		}
 		
 	else if (pilihan=='t'||pilihan=='T'){
-		menuUtama();
+		menuUtama2();
 		getch();
 	}		
 }
@@ -1335,7 +1520,7 @@ void opsiKembali2 (void){
 	scanf("%s", &opsi);
 				
 	if (opsi == 'y' || opsi=='Y'){
-		listSpesifikasi();
+		listSpesifikasi2();
 	}
 	else if (opsi == 'p' || opsi=='P') {
 		system ("cls");
