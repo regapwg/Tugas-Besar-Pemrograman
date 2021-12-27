@@ -35,11 +35,17 @@ void menuUtama (void); //fungsi tampilan menu utama ketika login
 
 void menuUtama2 (void); //fungsi tampilan menu utama tanpa login
 
+void tentangKami (void); //fungsi untuk menampilkan informasi tentang kami 
+
 void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, const char*namaLaptop[100][25], int totalTagihan, int data, int unit);
 
 void keranjangBayar(void);
 
 void menuLaptop (void); //fungsi tampilan menu laptop
+
+void rekomendasiLaptop (void); //fungsi tampilan menu rekomendasi laptop (login)
+
+void rekomendasiLaptop2 (void); //fungsi tampilan menu rekomendasi laptop (tanpa login)
 
 void listSpesifikasi (void); //fungsi tampilan list spesifikasi laptop
 
@@ -632,6 +638,235 @@ void menuLaptop (void){
 		getch();
 	}
 }
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	Fungsi Rekomendasi Laptop      	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 26 Desember 2021 <<                   	 //
+// Nama Fungsi    : rekomendasiLaptop                                    //
+// Deskripsi      : berfungsi untuk memberikan rekomendasi laptop        //
+//                  untuk pengguna                                       //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
+void rekomendasiLaptop (void){
+	
+	char pilih, lanjut;
+    system("cls");
+	printf("\n\n");
+	header(); 
+    printf("\t\t\t +----------------------------------------------------------------------+\n");
+    printf("\t\t\t |                   Silahkan pilih penggunaan laptop                   |\n");
+    printf("\t\t\t +---+------------------------------------------------------------------+\n");
+    printf("\t\t\t | 1 |  Pelajar SD/SMP/SMA/Kuliah (basic use word, excel, dll.)         |\n");
+    printf("\t\t\t |---|------------------------------------------------------------------+\n");
+    printf("\t\t\t | 2 |  Pelajar SMK (DKV, Multimedia, IT)                               |\n");
+    printf("\t\t\t |---|------------------------------------------------------------------+\n");
+    printf("\t\t\t | 3 |  Content Creator                                                 |\n");
+    printf("\t\t\t |---|------------------------------------------------------------------+\n");
+    printf("\t\t\t | 4 |  Gamer                                                           |\n");
+    printf("\t\t\t +---+------------------------------------------------------------------+\n");
+    printf("\t\t\t | >> Silahkan pilih penggunaan laptop anda : "); 
+    scanf ("%d", &pilih); 
+    
+    if (pilih==1){
+    	printf("\t\t\t |  Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t |  >> ASUS Vivobook 15 A516\n");
+    	printf("\t\t\t |  >> ASUS VivoBook 14 M415\n");
+    	printf("\t\t\t |  +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t |  >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			menuLaptop();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama();
+		}
+	}
+	else if (pilih==2){
+    	printf("\t\t\t |  Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t |  >> Macbook Air 2020\n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming F15\n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming A15\n");
+    	printf("\t\t\t |  +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t |  >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			menuLaptop();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama();
+		}
+	}
+	else if (pilih==3){
+    	printf("\t\t\t |  Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming F15\n");
+    	printf("\t\t\t | >> ASUS TUF Gaming A15\n");
+    	printf("\t\t\t |  >> HP Pavilion Gaming dk2068TX \n");
+    	printf("\t\t\t |  +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t |  >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			menuLaptop();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama();
+		}
+	}
+	else if (pilih==4){
+    	printf("\t\t\t |  Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming F15\n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming A15\n");
+    	printf("\t\t\t |  >> ASUS TUF Dash F15 2021\n");
+    	printf("\t\t\t |  >> HP Pavilion Gaming dk2068TX \n");
+    	printf("\t\t\t |  +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t |  >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			menuLaptop();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama();
+		}
+	}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	Fungsi Rekomendasi Laptop2       <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 26 Desember 2021 <<                   	 //
+// Nama Fungsi    : rekomendasiLaptop2                                   //
+// Deskripsi      : berfungsi untuk memberikan rekomendasi laptop        //
+//                  untuk pengguna                                       //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
+void rekomendasiLaptop2 (void){
+	
+	char pilih, lanjut;
+	
+	system("cls");
+	printf("\n\n");
+	header();
+    printf("\t\t\t +----------------------------------------------------------------------+\n");
+    printf("\t\t\t |                   Silahkan pilih penggunaan laptop                   |\n");
+    printf("\t\t\t +---+------------------------------------------------------------------+\n");
+    printf("\t\t\t | 1 |  Pelajar SD/SMP/SMA/Kuliah (basic use word, excel, dll.)         |\n");
+    printf("\t\t\t |---|------------------------------------------------------------------+\n");
+    printf("\t\t\t | 2 |  Pelajar SMK (DKV, Multimedia, IT)                               |\n");
+    printf("\t\t\t |---|------------------------------------------------------------------+\n");
+    printf("\t\t\t | 3 |  Content Creator                                                 |\n");
+    printf("\t\t\t |---|------------------------------------------------------------------+\n");
+    printf("\t\t\t | 4 |  Gamer                                                           |\n");
+    printf("\t\t\t +---+------------------------------------------------------------------+\n");
+    printf("\t\t\t | >> Silahkan pilih penggunaan laptop anda : "); 
+    scanf ("%d", &pilih); 
+    
+    if (pilih==1){
+    	printf("\t\t\t | Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t | >> ASUS Vivobook 15 A516\n");
+    	printf("\t\t\t | >> ASUS VivoBook 14 M415\n");
+    	printf("\t\t\t +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t | >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			system("cls");
+			printf("\n\n\n");
+			printf("\t\t\t >> Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+			getch();
+			menuLogin();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama2();
+		}
+	}
+	else if (pilih==2){
+    	printf("\t\t\t | Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t | >> Macbook Air 2020\n");
+    	printf("\t\t\t | >> ASUS TUF Gaming F15\n");
+    	printf("\t\t\t | >> ASUS TUF Gaming A15\n");
+    	printf("\t\t\t +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t | >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			system("cls");
+			printf("\n\n\n");
+			printf("\t\t\t >>  Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+			getch();
+			menuLogin();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama2();
+		}
+	}
+	else if (pilih==3){
+    	printf("\t\t\t |  Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming F15\n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming A15\n");
+    	printf("\t\t\t |  >> HP Pavilion Gaming dk2068TX \n");
+    	printf("\t\t\t +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t |  >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			system("cls");
+			printf("\n\n\n");
+			printf("\t\t\t >>  Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+			getch();
+			menuLogin();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama2();
+		}
+	}
+	else if (pilih==4){
+    	printf("\t\t\t |  Berikut rekomendasi laptop dari kami berdasarkan pilihan anda : \n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming F15\n");
+    	printf("\t\t\t |  >> ASUS TUF Gaming A15\n");
+    	printf("\t\t\t |  >> ASUS TUF Dash F15 2021\n");
+    	printf("\t\t\t |  >> HP Pavilion Gaming dk2068TX \n");
+    	printf("\t\t\t +----------------------------------------------------------------------+\n");
+    	printf("\t\t\t | >> Lanjut ke pemesanan? (y/t) : "); 
+   	 	scanf ("%s", &lanjut);
+   	 	if (lanjut=='y'||lanjut=='Y'){
+			system("cls");
+			printf("\n\n\n");
+			printf("\t\t\t >>  Silahkan Kembali ke Menu Awal Untuk Log-in Terlebih Dahulu << ");
+			getch();
+			menuLogin();
+		}
+		else if (lanjut=='t'||lanjut=='T'){
+			menuUtama2();
+		}
+	}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>       	   Fungsi Tentang Kami      	 <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 26 Desember 2021 <<                   	 //
+// Nama Fungsi    : tentangKami                                          //
+// Deskripsi      : berfungsi untuk menampilkan informasi terkait        //
+//                  dengan program                                       //	
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
+void tentangKami (void){
+	system("cls");
+	printf("\n\n");
+	printf("\t\t\t ++------------------------------------------------------------------++\n");
+	printf("\t\t\t ||                            ABOUT US                              ||\n");
+	printf("\t\t\t ++------------------------------------------------------------------++\n");
+	printf("\t\t\t ||                           Mley'o Tech                            ||\n");
+	printf("\t\t\t ||                                                                  ||\n");
+	printf("\t\t\t ||  -> Alamat          : Jl. Disana GG. Disini No.666, Denpasar     ||\n");
+	printf("\t\t\t ||  -> Contact         : +6281246810121                             ||\n");
+	printf("\t\t\t ||  -> Email           : mleyotech@gmail.com                        ||\n");
+	printf("\t\t\t ||  -> Instagram       : mleyotech.id                               ||\n");
+	printf("\t\t\t ||  -> Shopee          : Mley'o Tech Indonesia                      ||\n");
+	printf("\t\t\t ||  -> Tokopedia       : Mley'o Tech Indonesia                      ||\n");
+	printf("\t\t\t ||                                                                  ||\n");
+	printf("\t\t\t ++------------------------------------------------------------------++\n\n");
+	
+	printf("\t\t\t ++----------      Enter untuk Kembali ke Menu Utama      -----------++\n");
+	getch();
+	menuUtama();
+}
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>       	 Fungsi Nota Pembayaran     	 <<<<<<<<<<<<<<<<//
@@ -668,6 +903,10 @@ void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, co
 // Deskripsi      : berfungsi untuk melakukan checkout pembayaran        //
 //                  pada keranjang pembayaran                            //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 26 Desember 2021 <<           	         //
+// Revisi 1       : Memperbaiki tampilan dari fungsi keranjangBayar      //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void keranjangBayar (void){
 	keranjangBayar:;
@@ -681,21 +920,18 @@ void keranjangBayar (void){
 	if(keranjang!=NULL){
 		char riwayat[255];
 		
-		while(fgets(riwayat, 255, keranjang)){
+		while(fgets(riwayat, sizeof(riwayat), keranjang)){
 			printf("%s", riwayat);
 		}
 		
 	fclose(keranjang);
 		
-		getch();
-		system("cls");
-		header();
-		printf("\t\t\t\t ++--------------------------------------------------++\n");
-		printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
+		printf("\n\n");
 		printf("\t\t\t\t ++--------------------------------------------------++\n");
 		printf("\t\t\t\t ||                                                  ||\n");
 		printf("\t\t\t\t ||  [1] Konfirmasi Pesanan                          ||\n");
-		printf("\t\t\t\t ||  [2] Kembali                     	             ||\n");
+		printf("\t\t\t\t ||  [2] Hapus Pesanan Anda            	             ||\n");
+		printf("\t\t\t\t ||  [3] Kembali                                     ||\n");
 		printf("\t\t\t\t ||                                                  ||\n");
 		printf("\t\t\t\t ++--------------------------------------------------++\n");
 		printf("\t\t\t\t ||Silahkan Pilih : ");
@@ -703,11 +939,11 @@ void keranjangBayar (void){
 		
 		if (pilihan==1){
 		    	konfirmasi:;
-		    	
+		    	system("cls");
 		        char bank[20],nama[60];
 		        int rekening, jumlah;
 		        
-	 
+	 			printf("\n\n\n\n");
 		        printf("\t\t\t\t Bank             : "); 
 				fflush(stdin);
 		        gets(bank);
@@ -720,28 +956,49 @@ void keranjangBayar (void){
 		        printf("\t\t\t\t Jumlah Transfer  : "); 
 				fflush(stdin);
 		        scanf("%d", &jumlah);
-		        printf("\t\t\t\t Apakah data yang diinputkan sudah sesuai? (y/n) : \n");
+		        printf("\n\n");
+		        printf("\t\t\t\t Apakah Data yang Anda Masukkan Sudah Sesuai? (y/n) : ");
 		       	scanf("%s",&benar);
 		        if(benar=='y'||benar=='Y'){
-			        printf("\t\t\t\t ++--------------------------------------------------++\n");
-			        printf("\t\t\t\t     >> Terima kasih, pesanan anda sedang diproses! <<\n\n");
+			        printf("\t\t\t\t ++--------------------------------------------------++\n\n");
+			        printf("\t\t\t\t    >> Terima kasih, pesanan anda sedang diproses! <<\n");
+			        printf("\t\t\t\t    >> Pengiriman dilakukan 1x24 jam setelah pembayaran tervalidasi<<\n");
 			        
 			        FILE* cekPembayaran;
 				    cekPembayaran=fopen(user.nama, "a+");
-				    			
-				    fprintf (cekPembayaran, "\t\t\t\t Bank                         : %s\n",bank);
-				    fprintf (cekPembayaran, "\t\t\t\t No Rekening                  : %d\n",rekening);
-				    fprintf (cekPembayaran, "\t\t\t\t Atas Nama                    : %s\n",nama);
-				    fprintf (cekPembayaran, "\t\t\t\t Jumlah Transfer              : %d\n",jumlah);
-				    fprintf (cekPembayaran, "\t\t\t\t ++--------------------------------------------------++\n");
+				    
+				    fprintf (cekPembayaran, "\t\t\t\t +----------------------------------------------------+\n");			
+				    fprintf (cekPembayaran, "\t\t\t\t |   Bank                         : %s\n",bank);
+				    fprintf (cekPembayaran, "\t\t\t\t |   No Rekening                  : %d\n",rekening);
+				    fprintf (cekPembayaran, "\t\t\t\t |   Atas Nama                    : %s\n",nama);
+				    fprintf (cekPembayaran, "\t\t\t\t |   Jumlah Transfer              : %d\n",jumlah);
+				    fprintf (cekPembayaran, "\t\t\t\t +----------------------------------------------------+\n");
 				    fclose  (cekPembayaran);
-				  
-				  
-					FILE * keranjang;
-					keranjang=fopen(user.nama,"w");
-					fprintf (keranjang,"\t\t\t\t\t >>>>Keranjang anda Kosong, Silahkan Lakukan Pemesanan!<<<");
+				  	
+		        	FILE*historyPembayaran;
+					historyPembayaran=fopen(history, "r");
+					    
+					if(history==NULL){
+					    strcat(history,user.nama);
+					}
+					FILE *copy, *read;
+					read = fopen(user.nama, "a+");
+					copy = fopen(history, "a+");	
+						
+					char data;
+					while((data=fgetc(read))!=EOF)
+					fputc(data,copy);
+					fclose(read);
+					fclose(copy);
+					fclose(historyPembayaran);	  	
+						
+				  	FILE * keranjang;
+				  	keranjang=fopen(user.nama,"w");
+					fprintf (keranjang,"\t\t\t   >>>Keranjang Anda Kosong, Silahkan Lakukan Pemesanan!<<<");
 					fclose (keranjang);
-                    system("pause");
+                    system("pause"); 
+                    menuUtama();
+				
 			    } 
 			    else{
 			    	printf("\n\n\t\t\t   Konfirmasi dibatalkan !\n\n");
@@ -749,8 +1006,25 @@ void keranjangBayar (void){
 			    }
 		    }
 		    else if(pilihan==2){
-		        menuUtama();
+		    	system("cls");
+		    	printf("\n\n");
+		        printf("\t\t\t\t     Anda yakin ingin menghapus keranjang? (y/n)");
+		        scanf("%s",&benar);
+		        if(benar=='y'||benar=='Y'){
+		        	
+					keranjang=fopen(user.nama,"w");
+					fprintf (keranjang,"\t\t\t   >>>Keranjang Anda Telah Dihapus, Silahkan Lakukan Pemesanan!<<<");
+					fclose (keranjang);
+                    getch();
+					menuUtama();
+		        }
+		        else{
+		        	 goto keranjangBayar;
+				}
 		    }
+		    else if(pilihan==3){
+		    	menuUtama();
+			}
 		    else{
 		        printf("\t\t\t\t Masukan Data Dengan Benar!");
 		        goto keranjangBayar;
@@ -758,7 +1032,7 @@ void keranjangBayar (void){
 	    }
 	 
 	    else{
-	    	printf("\t\t\t\t\t >>>Keranjang anda Kosong, Silahkan Lakukan Pemesanan!<<<");
+	    	printf("\t\t\t\t >>>Keranjang anda Kosong, Silahkan Lakukan Pemesanan!<<<");
 	    	getch();
 	    	menuUtama();
 	    }
