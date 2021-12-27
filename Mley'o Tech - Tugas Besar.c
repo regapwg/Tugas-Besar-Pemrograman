@@ -24,7 +24,7 @@
 #include <stdio.h>     // library menu utama 
 #include <stdlib.h>   // Library System Clearscreen
 #include <time.h>   //Library Untuk Tanggal 
-#include <string.h> //library untuk strcat
+#include <string.h> //library untuk penggunaan strcat
 
 void judulProgram (void); //fungsi tampilan judul program
 
