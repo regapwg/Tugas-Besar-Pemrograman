@@ -646,6 +646,10 @@ void kebijakanToko (void){
 //									 //
 // Revisi 6       : Menambahkan menu laptop baru                         //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//                         >> 27 Desember 2021 <<           	         //
+// Revisi 7       : Menambahkan menu laptop baru                         //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void menuLaptop (void){
 	menuAwal:;
@@ -680,6 +684,10 @@ void menuLaptop (void){
 	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
 	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
 	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <11>  ASUS Vivobook 15 A516               |   Rp.6.799.000   ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <12>  ASUS VivoBook 14 M415               |   Rp.7.399.000   ||\n");
 	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
 	printf("\t\t\t  ++---------------------------------------------------------------++\n");
 	printf("\t\t\t  ||                         [Y]  Checkout                         ||\n");
@@ -742,6 +750,14 @@ void menuLaptop (void){
 			else if(menuLaptop[data]==10){
 				harga[data]= 35200000;
 				namaLaptop[data][data]= "Lenovo Legion 5 Pro";	
+			}
+			else if(menuLaptop[data]==11){
+				harga[data]= 6799000;
+				namaLaptop[data][data]= "ASUS Vivobook 15 A516";	
+			}
+			else if(menuLaptop[data]==12){
+				harga[data]= 7399000;
+				namaLaptop[data][data]= "ASUS Vivobook 14 M415";	
 			}
 			else{
 				printf ("\t\t\t\t >> Masukan Pilihan Yang Sesuai! << ");
@@ -1236,6 +1252,10 @@ void keranjangBayar (void){
 // Revisi 1       : Menambahkan pilihan laptop baru dan memperbaiki      //
 //                  tampilan menu daftar laptop                          //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 27 Desember 2021 <<           	         //
+// Revisi 2       : Menambahkan pilihan laptop baru                      //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void listSpesifikasi (void){
 	menuSpec:;
@@ -1268,6 +1288,10 @@ void listSpesifikasi (void){
 	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
 	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
 	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <11>  ASUS Vivobook 15 A516               |   Rp.6.799.000   ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <12>  ASUS VivoBook 14 M415               |   Rp.7.399.000   ||\n");
 	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
 	printf("\t\t\t  ++---------------------------------------------------------------++\n");
 	printf("\t\t\t  ||                     [Y]  Lihat Spesifikasi                    ||\n");
@@ -1331,6 +1355,16 @@ void listSpesifikasi (void){
 				specLaptop10 ();
 				opsiKembali ();	
 			}
+			else if(unit==11){
+				system("cls");
+				specLaptop11 ();
+				opsiKembali ();	
+			}
+			else if(unit==12){
+				system("cls");
+				specLaptop12 ();
+				opsiKembali ();	
+			}
 			else{
 				printf("\t\t\t\t         Input salah, Masukkan Input yang Benar!    \n");	
 				printf("\t\t\t\t                   Enter untuk Coba Lagi         \n");	
@@ -1358,6 +1392,10 @@ void listSpesifikasi (void){
 //                         >> 20 Desember 2021 <<           	         //
 // Revisi 1       : Menambahkan pilihan laptop baru dan memperbaiki      //
 //                  tampilan menu daftar laptop                          //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 27 Desember 2021 <<           	         //
+// Revisi 2       : Menambahkan pilihan laptop baru                      //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void listSpesifikasi2 (void){
@@ -1391,6 +1429,10 @@ void listSpesifikasi2 (void){
 	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
 	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
 	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <11>  ASUS Vivobook 15 A516               |   Rp.6.799.000   ||\n");
+	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
+	printf("\t\t\t  ||  <12>  ASUS VivoBook 14 M415               |   Rp.7.399.000   ||\n");
 	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
 	printf("\t\t\t  ++---------------------------------------------------------------++\n");
 	printf("\t\t\t  ||                     [Y]  Lihat Spesifikasi                    ||\n");
@@ -1452,6 +1494,16 @@ void listSpesifikasi2 (void){
 			else if(unit==10){
 				system("cls");
 				specLaptop10 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==11){
+				system("cls");
+				specLaptop11 ();
+				opsiKembali2 ();	
+			}
+			else if(unit==12){
+				system("cls");
+				specLaptop12 ();
 				opsiKembali2 ();	
 			}
 			else{
@@ -1851,7 +1903,7 @@ void specLaptop9 (void){
 //>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 20 Desember 2021 <<           	         //
-// Nama Fungsi    : specLaptop10                                         //
+// Nama Fungsi    : specLaptop11                                         //
 // Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
 //                  tipe laptop	Lenovo Legion 5 Pro                      //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
@@ -1879,5 +1931,74 @@ void specLaptop10 (void){
 	printf ("\t |                                                                                                     |\n");
 	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
 	printf ("\t |       Up to Windows 11 Pro                                                                          |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 27 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop10                                         //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	Asus VivoBook 15 A516                    //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop11(void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                  * Asus VivoBook 15 A516 *                                          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Display                                                                                       |\n");
+	printf ("\t |       15.6-inch LED Backlit FHD (1920 x 1080) 16:9 200nits anti-glare panel                         |\n");
+	printf ("\t |       NanoEdge Display                                                                              |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] Up to Intel® Core 11th Gen CPU                                                                |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       4GB on board + 4GB / 4GB, 1TB HDD + 256GB PCIe SSD                                            |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       Up to MX330 Discrete Graphics                                                                 |\n");
+	printf ("\t |       Intel® UHD Graphics 600                                                                       |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Up to Windows 10 Home                                                                         |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 27 Desember 2021 <<           	         //
+// Nama Fungsi    : specLaptop12                                         //
+// Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
+//                  tipe laptop	Asus VivoBook 14 M415                    //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void specLaptop12 (void){
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |                                  * Asus VivoBook 14 M415 *                                          |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	printf ("\t | SPESIFIKASI :                                                                                       |\n");
+	printf ("\t |   [1] Display                                                                                       |\n");
+	printf ("\t |       14.0-inch LED Backlit FHD (1920 x 1080) 16:9 250nits anti-glare IPS-level panel               |\n");
+	printf ("\t |       NanoEdge Display                                                                              |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [2] AMD Athlon Gold 3150U Processor 2.4 GHz (4M Cache, up to 3.3 GHz, 2 cores)                    |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
+	printf ("\t |       4GB DDR4 on board + 4GB DDR4 SO-DIMM, 512GB M.2 NVMe PCIe® 3.0 SSD                            |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [4] Graphic Card                                                                                  |\n");
+	printf ("\t |       AMD Ryzen 5000 Series Mobile Processor                                                        |\n");
+	printf ("\t |                                                                                                     |\n");
+	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
+	printf ("\t |       Up to Windows 10 Home                                                                         |\n");
 	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
 }
