@@ -1720,34 +1720,21 @@ void opsiKembali2 (void){
 //                  tipe laptop MACBOOK AIR 2020	                 //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 
 void specLaptop1 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                    ** MACBOOK AIR 2020 **                                           |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar                                                                                         |\n");
-	printf ("\t |       13,3 inci pada resolusi 2560 x 1600, dengan teknologi true tone dan kecerahan 400 nits.       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Chip Apple M1                                                                                 |\n");
-	printf ("\t |       CPU 8 Core dan Neural Engine 16 Core                                                          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8 GB memori (expandable up to 16 GB), SSD 256/512 GB (expandable up to 2 TB)                  |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Mac OS                                                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Paket Pembelian                                                                               |\n");
-	printf ("\t |       >> 1 unit Macbook Air                                                                         |\n");
-	printf ("\t |       >> Adaptor Daya USB-C 30W                                                                     |\n");
-	printf ("\t |       >> Kabel Pengisi Daya USB-C (2m)                                                              |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop1.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
-
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>      	  Fungsi Spec Laptop		 <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -1757,33 +1744,21 @@ void specLaptop1 (void){
 //                  tipe laptop	MACBOOK PRO M1                           //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void specLaptop2 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                    ** MACBOOK PRO M1 **                                             |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar                                                                                         |\n");
-	printf ("\t |       13,3 inci pada resolusi 2560 x 1600, dengan teknologi true tone dan kecerahan 500 nits.       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Chip Apple M1                                                                                 |\n");
-	printf ("\t |       CPU 8 Core dan Neural Engine 16 Core                                                          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8 GB memori (expandable up to 16 GB), SSD 256 (expandable up to 2 TB)                         |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Mac OS                                                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Paket Pembelian                                                                               |\n");
-	printf ("\t |       >> 1 unit Macbook Pro 13 inci                                                                 |\n");
-	printf ("\t |       >> Adaptor Daya USB-C 61W                                                                     |\n");
-	printf ("\t |       >> Kabel Pengisi Daya USB-C (2m)                                                              |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop2.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
-
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -1793,31 +1768,20 @@ void specLaptop2 (void){
 //                  tipe laptop	ASUS TUF GAMING F15                      //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void specLaptop3 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                   ** ASUS TUF GAMING F15 **                                         |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
-	printf ("\t |       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz         |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Prosesor Intel® Core™ i7-10750H Processor 2.6 GHz                                             |\n");
-	printf ("\t |       12M Cache, up to 5.0 GHz, 6 cores                                                             |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8GB DDR4 SO-DIMM (expandable up to 32 GB), 512GB M.2 NVMe™ PCIe® 3.0 SSD                      |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA® GeForce® GTX 1660Ti, 6GB GDDR6                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop3.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 } 
-
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -1827,31 +1791,20 @@ void specLaptop3 (void){
 //                  tipe laptop	ASUS TUF GAMING A15                      //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void specLaptop4 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                   ** ASUS TUF GAMING A15 **                                         |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
-	printf ("\t |       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz         |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] AMD Ryzen™ 7 4800H Mobile Processor                                                           |\n");
-	printf ("\t |       (8C/16T, 12MB Cache, 4.2 GHz Max Boost)                                                       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8GB DDR4 SO-DIMM (expandable up to 32 GB), 512GB M.2 NVMe™ PCIe® 3.0 SSD                      |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA® GeForce® GTX 1660Ti, 6GB GDDR6                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop4.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
-
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>>      	  Fungsi Spec Laptop	         <<<<<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
@@ -1861,31 +1814,20 @@ void specLaptop4 (void){
 //                  tipe laptop	ASUS TUF DASH F15 2021                   //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void specLaptop5 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                  ** ASUS TUF DASH F15 2021 **                                       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
-	printf ("\t |       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz,        |\n");
-	printf ("\t |       Adobe:47.34%, Value IPS-level, Optimus                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Intel® Core™ i7-11370H Processor 3.3 GHz, 4 cores                                             |\n");
-	printf ("\t |        (12M Cache, up to 4.8GHz)                                                                    |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8GB DDR4 on board, Max Capacity : 32GB                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA® GeForce RTX™ 3060 Laptop GPU, 6GB GDDR6                                               |\n");
-	printf ("\t |       With ROG Boost up to 1525MHz at 80W (85W with Dynamic Boost)                                  |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Windows 10 Home (upgradeable to Windows 11)                                                   |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop5.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
@@ -1896,31 +1838,19 @@ void specLaptop5 (void){
 // Deskripsi      : berfungsi untuk menampilkan deskripsi spec dari      //
 //                  tipe laptop	HP Pavilion x360 Convertible             //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
-//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void specLaptop6 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                              ** HP Pavilion x360 Convertible **                                     |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
-	printf ("\t |       14 inch diagonal FHD touch display FHD (1920 x 1080)        				  |\n");
-	printf ("\t |       Multitouch-enabled, IPS, edge-to-edge glass, micro-edge, 250 nits, 45% NTSC                   |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Intel® Evo™ platform 11th Gen Intel® Core™ i7 processor                                       |\n");
-	printf ("\t |       (up to 4.7 GHz with Intel® Turbo Boost Technology, 12 MB L3 cache, 4 cores)                   |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8 GB DDR4-3200 MHz RAM (2 x 4 GB), 512 GB SSD storage                                         |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       Intel® Iris® X? Graphics                                        			          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Windows 10 Home Single Language 64                                                            |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop6.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
