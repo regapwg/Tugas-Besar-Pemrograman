@@ -36,9 +36,15 @@ void login (void); //fungsi login
 
 void registrasi (void);//fungsi registrasi
 
+void admin(void); //fungsi login Admin
+
 void menuUtama (void); //fungsi tampilan menu utama ketika login
 
 void menuUtama2 (void); //fungsi tampilan menu utama tanpa login
+
+void menuAdmin (void); //fungsi menu Admin
+
+void editListlaptop (void); //fungsi menambahkan list laptop
 
 void kebijakanToko (void); //fungsi untuk menampilkan aturan yang berlaku bagi konsumen
 
@@ -97,8 +103,12 @@ struct Data{
 }user;
 
 FILE*kumpulandata; //pointer untuk mengakses file
+FILE* baca;
 
 char history[100]="history";
+char histAdmin[100]="histAdmin";
+
+time_t kalender; //Tipe data dari library time.h
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>                   Program Utama                 <<<<<<<<<<<//
@@ -187,7 +197,6 @@ void header (void){
 int bulan, tanggal, tahun, jam, menit, detik, hari;
 char date[64];	
 		      					
-	time_t kalender; //Tipe data dari library time.h
 	time(&kalender);
 		
 		struct tm*data = localtime(&kalender); 	//Tipe data dan variabel untuk waktu system 
@@ -244,7 +253,11 @@ void menuLogin(void){
 	printf("\t\t\t\t ||                                                  ||\n");
 	printf("\t\t\t\t ||                   3 | Daftar                     ||\n");
 	printf("\t\t\t\t ||                                                  ||\n");	
-	printf("\t\t\t\t ++--------------------------------------------------++\n");	
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
+	printf("\t\t\t\t ||                   4 | Admin                      ||\n");
+	printf("\t\t\t\t ||                                                  ||\n");
+	printf("\t\t\t\t ||                   5 | Close Program              ||\n");
+	printf("\t\t\t\t ++--------------------------------------------------++\n");
 	printf("\n");
 	printf("\t\t\t\t >> Input Pilihan : ");
 	scanf("%d", &opsi);
@@ -259,6 +272,20 @@ void menuLogin(void){
 		case 3: //untuk melakukan registrasi apabila belum memiliki akun
 			registrasi();
 		break;	
+		case 4 :
+			admin();
+		break;
+		case 5 :
+			system("cls");
+			printf("\n\n\n\n\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+		   	printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |               !! THANKYOU !!             |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t |              enter to continue           |\n");
+			printf("\t\t\t\t |                                          |\n");
+			printf("\t\t\t\t +------------------------------------------+\n");
+		break ;
 		default :
 			system("cls");
 			printf("\n\n\n\n\n");
@@ -394,6 +421,61 @@ void login (void){
 }
 
 //-----------------------------------------------------------------------//
+//>>>>>>>>>>>    Fungsi Untuk Menggunakan sistem menuLogin    <<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 1 Desember 2021 <<           	          	 //
+// Nama Fungsi    : admin                                                //
+// Deskripsi      : Membuat login untuk admin toko                       //
+//                                                                       //	
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//-----------------------------------------------------------------------//
+void admin(void){
+	system("cls");
+	header();
+	printf ("\n\n");
+    printf ("\t\t\t\t\t         USERNAME  : ");
+	scanf("%s", &username);
+	printf ("\n");
+	printf("\t\t\t\t\t         PASSWORD  : ");
+	scanf("%s", &password);
+	
+	
+	if(strcmp(username,"ega")==00 && strcmp(password,"admin")==00 ||
+	strcmp(username,"khresna")==00 &&strcmp(password,"admin")==00) { 
+		system("cls");
+		printf("\n\n\n\n\n");
+		printf("\t\t\t\t\t +------------------------------------------+\n");
+		printf("\t\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+		printf("\t\t\t\t\t +------------------------------------------+\n");
+		printf("\t\t\t\t\t |                                          |\n");
+		printf("\t\t\t\t\t |           !! LOGIN BERHASIL !!           |\n");
+		printf("\t\t\t\t\t |                                          |\n");
+		printf("\t\t\t\t\t |            enter to continue             |\n");
+		printf("\t\t\t\t\t |                                          |\n");
+		printf("\t\t\t\t\t +------------------------------------------+\n");
+		getch();
+		menuAdmin();	
+    }
+	else { //jika salah akan masuk kesini untuk opsi ke menu awal (login kembali)
+							    		
+		system("cls");
+		printf("\n\n\n\n\n");
+		printf("\t\t\t\t +------------------------------------------+\n");
+		printf("\t\t\t\t |          Program Toko Mley'o Tech        |\n");
+		printf("\t\t\t\t +------------------------------------------+\n");
+		printf("\t\t\t\t |                                          |\n");
+		printf("\t\t\t\t |        !! LOGIN TIDAK BERHASIL !!        |\n");
+		printf("\t\t\t\t |                                          |\n");
+		printf("\t\t\t\t |            enter to continue             |\n");
+		printf("\t\t\t\t |                                          |\n");
+		printf("\t\t\t\t +------------------------------------------+\n");	
+		getch();
+		menuLogin();
+		} 
+}
+
+//-----------------------------------------------------------------------//
 //>>>>>>>>>>>>>        Fungsi Untuk Menampilkan Menu	    <<<<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 4 Desember 2021 <<           	         //
@@ -412,6 +494,9 @@ void login (void){
 // Revisi 2       : Menemabhakan menu kebijakan toko, history, tentang   //
 //                  kami                                                 //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti menu menggunakan file.txt                  //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 
 void menuUtama (void){
@@ -420,23 +505,15 @@ void menuUtama (void){
 	printf("\n\n");
 	header();
 	int menuUtama;
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  [1] DAFTAR LAPTOP                               ||\n");
-	printf("\t\t\t\t ||  [2] SPESIFIKASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [3] REKOMENDASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [4] KERANJANG BELANJA                           ||\n");
-	printf("\t\t\t\t ||  [5] HISTORY PEMESANAN                           ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [6] KEBIJAKAN TOKO                              ||\n");
-	printf("\t\t\t\t ||  [7] TENTANG KAMI                                ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");;
-	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); 
-	scanf("%d", &menuUtama);
-	//memilih menu
+	baca=fopen("menuUtama.txt","r");
+	
+		char data[255];
+		while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t\t %s", data);
+		}
+		fclose(baca);
+	        scanf("%d", &menuUtama);
 		if(menuUtama==1){
 			menuLaptop();
 		}
@@ -458,6 +535,9 @@ void menuUtama (void){
 		else if(menuUtama==7){
 			tentangKami();
 		}
+		else if(menuUtama==8){
+			menuLogin();
+		}
 }
 
 //-----------------------------------------------------------------------//
@@ -472,6 +552,10 @@ void menuUtama (void){
 // Revisi 2       : Menemabhakan menu kebijakan toko, history, tentang   //
 //                  kami                                                 //
 // Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti menu menggunakan file.txt                  //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void menuUtama2 (void){
 	menuUtama2:
@@ -479,19 +563,14 @@ void menuUtama2 (void){
 	printf("\n\n");
 	header();
 	int menuUtama;
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                    MAIN MENU                     ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  [1] SPESIFIKASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [2] REKOMENDASI LAPTOP                          ||\n");
-	printf("\t\t\t\t ||  [3] KERANJANG BELANJA                           ||\n");
-	printf("\t\t\t\t ||  [4] HISTORY PEMESANAN                           ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||  [5] LOGIN                                       ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t || >> Selamat datang, silahkan pilih : "); 
+	baca=fopen("menuUtama2.txt","r");
+	
+		char data[255];
+		while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t\t %s", data);
+		}
+		fclose(baca);
 	scanf("%d", &menuUtama);
 	//memilih menu
 		if(menuUtama==1){
@@ -517,6 +596,91 @@ void menuUtama2 (void){
 		else if(menuUtama==5){
 			menuLogin();
 		}
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Menu Tanpa Login  <<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 1 January 2022 <<                          //
+// Nama Fungsi    : menuAdmin                                            //
+// Deskripsi      : fungsi ini berfungsi untuk menampilkan menu Admin    //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//-----------------------------------------------------------------------//
+
+void menuAdmin (void){
+	menuAdmin:
+	system("cls");
+	printf("\n\n");
+	header();
+	int menuAdmin;
+	baca=fopen("menuAdmin.txt","r");
+	
+		char data[255];
+		while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t\t %s", data);
+		}
+		fclose(baca);
+	printf("\t\t\t\t >> Selamat Datang Admin %s, Silahkan Pilih : ", username);	
+	scanf("%d", &menuAdmin);
+	if (menuAdmin==1){
+		dataHistorycust ();
+	}
+	else if (menuAdmin==2){
+		editListlaptop();
+	}
+	else if (menuAdmin==3){
+		menuLogin();
+    }
+}
+
+//-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>  Fungsi Untuk Menampilkan Menu Tanpa Login  <<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 1 January 2022 <<                          //
+// Nama Fungsi    : editListlaptop                                       //
+// Deskripsi      : fungsi ini berfungsi untuk menambahkan daftar laptop //
+// Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
+//-----------------------------------------------------------------------//
+void editListlaptop (void){
+	editList:
+	system("cls");
+	printf("\n\n");
+	header();
+	char pilihan;
+	baca=fopen("menuLaptop.txt","r");
+			char datalaptop[255];
+		
+			while(fgets(datalaptop, sizeof(datalaptop), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t  %s", datalaptop);
+		}
+	fclose(baca);
+	printf("\n");
+	printf("\t\t\t  ++-----------------------------------------------------------++\n");
+	printf("\t\t\t  ||                     [Y]  Menambahkan List Laptop          ||\n");
+	printf("\t\t\t  ||                     [T]  Kembali                          ||\n");
+	printf("\t\t\t  ++-----------------------------------------------------------++\n");
+	printf("\t\t\t    >> Silahkan Pilih : ");
+	scanf("%s", &pilihan);
+	
+	if (pilihan=='y'||pilihan=='Y'){
+		char input[100] = "menuLaptop.txt";
+		char harga[100];
+		FILE* edit;
+		edit=fopen("menuLaptop.txt","a+");
+		printf("\t\t\t  >> Input Laptop : "); fflush(stdin);
+		gets(input);
+		printf("\t\t\t  >> Input Harga  : "); fflush(stdin);
+		gets(harga);
+		fprintf(edit,"\n\n   %s",input);
+		fprintf(edit,"    || Rp.%s",harga);
+		fclose(edit);	
+		goto editList;
+	}
+	else if (pilihan=='t'||pilihan=='T'){
+		menuAdmin();
+	}
 }
 
 //-----------------------------------------------------------------------//
@@ -564,52 +728,30 @@ void historyPemesanan(void){
 //                  kebijakan toko                                       //	
 //                                                                       //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void kebijakanToko (void){
 	system("cls");
 	header();
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                  KEBIJAKAN TOKO                  ||\n");
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t ||  Setiap melakukan transaksi pada aplikasi  kami, ||\n");
-	printf("\t\t\t\t ||  kami  anggap Anda telah membaca dan  menyetujui ||\n");
-	printf("\t\t\t\t ||  segala bentuk syarat dan ketentuan yang berlaku ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t || >> Pesanan  akan kami proses apabila anda  telah ||\n");
-	printf("\t\t\t\t ||    melakukan   validasi   checkout   pada   menu ||\n");
-	printf("\t\t\t\t ||    KERANJANG BELANJA.                            ||\n");
-        printf("\t\t\t\t ||                                                  ||\n");
-        printf("\t\t\t\t || >> Pastikan  melakukan transfer  dengan  nominal ||\n");
- 	printf("\t\t\t\t ||    yang   tertera.  kelebihan  transfer    bukan ||\n");
- 	printf("\t\t\t\t ||    tanggung   jawab   kami. kami tidak  menerima ||\n");
- 	printf("\t\t\t\t ||    pengajuan   refund  uang  dari transfer yang  ||\n");
- 	printf("\t\t\t\t ||    kelebihan.                                    ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");    
-	printf("\t\t\t\t || >> Kami hanya bekerja sama dengan ekspedisi JNE. ||\n");
-        printf("\t\t\t\t ||    FREE ONGKIR menggunakan  packing  buble  wrap ||\n");
-	printf("\t\t\t\t ||    dan   kayu   serta    kami    juga    memilih ||\n");
-	printf("\t\t\t\t ||    pengantaran berasuransi agar barang anda aman.||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t || >> Masa Garansi berlaku dimulai sejak anda telah ||\n");
-	printf("\t\t\t\t ||    melakukan  validasi checkout dan pengembalian ||\n");
-	printf("\t\t\t\t ||    barang  harus  disertai  box  lengkap,  kartu ||\n");
-	printf("\t\t\t\t ||    garansi, dan nota pembelian.                  ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t || >> Garansi Toko hanya berlaku selama 3 hari, dan ||\n");
-	printf("\t\t\t\t ||    garansi  resmi  distributor  tergantung  dari ||\n");
-	printf("\t\t\t\t ||    barang yang anda beli.                        ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");
-	printf("\t\t\t\t || >> Ongkos  claim  garansi, baik biaya pengiriman ||\n");
-	printf("\t\t\t\t ||    barang,   biaya   sparepart,  dll  ditanggung ||\n");
-	printf("\t\t\t\t ||    oleh pembeli.                                 ||\n");
-	printf("\t\t\t\t ||                                                  ||\n");	
-	printf("\t\t\t\t ++--------------------------------------------------++\n");
-	printf("\n\n");
-	printf("\t\t\t\t ++-----   Enter untuk Kembali ke Menu Utama    -----++\n");
+	
+	FILE* baca;
+	baca=fopen("kebijakanToko.txt","r");
+	
+		char data[255];
+		
+		//menampilkan isi file dengan perulangan while
+		while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t\t %s", data);
+		}
+		fclose(baca);
 	getch();
 	menuUtama();
 }
+
 
 //-----------------------------------------------------------------------//
 //>>>>>>>>>>>       	     Fungsi Pilihan Menu	 <<<<<<<<<<<<<<<<//
@@ -650,11 +792,15 @@ void kebijakanToko (void){
 //                         >> 27 Desember 2021 <<           	         //
 // Revisi 7       : Menambahkan menu laptop baru                         //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 8       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void menuLaptop (void){
 	menuAwal:;
 		
-	const char * namaLaptop[100][25];
+	const char * namaLaptop[100][25]; 
 		
 	int data, unit, menuLaptop[100], harga[100], totalTagihan = 0;
 	char pilihan, checkout, jumlah [100];
@@ -662,40 +808,20 @@ void menuLaptop (void){
 	system("cls");
 	printf("\n\n");
 	header();
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||            DAFTAR LAPTOP                   |       HARGA      ||\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||  <1>  Mackbook Air 2020                    |   Rp.16.500.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <2>  Mackbook Pro M1                      |   Rp.20.900.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <3>  ASUS TUF Gaming F15                  |   Rp.18.500.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <4>  ASUS TUF Gaming A15                  |   Rp.16.899.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <5>  ASUS TUF Dash F15 2021               |   Rp.18.799.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <6>  HP Pavilion x360 Convertible         |   Rp.14.999.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <7>  HP Pavilion Gaming dk2068TX          |   Rp.15.499.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <8>  Lenovo Legion Y740                   |   Rp.28.899.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <11>  ASUS Vivobook 15 A516               |   Rp.6.799.000   ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <12>  ASUS VivoBook 14 M415               |   Rp.7.399.000   ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||                         [Y]  Checkout                         ||\n");
-	printf("\t\t\t  ||                         [T]  Kembali                          ||\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||  >> ingin checkout Laptop? : ");
+	baca=fopen("menuLaptop.txt","r");
+			char datalaptop[255];
+		
+			while(fgets(datalaptop, sizeof(datalaptop), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t  %s", datalaptop);
+		}
+		fclose(baca);
+	printf("\t\t\t  ++-----------------------------------------------------------++\n");
+	printf("\t\t\t  ||                       [Y]  Checkout                       ||\n");
+	printf("\t\t\t  ||                       [T]  Kembali                        ||\n");
+	printf("\t\t\t  +------------------------------------------------------------++\n");
+    printf("\t\t\t                    >> ingin checkout Laptop? : ");
 	scanf("%s", &pilihan);
-	
 	if (pilihan == 'y'|| pilihan =='Y'){
 		printf("\t\t\t  ||  >> Ingin checkout berapa jenis Laptop? : ");
 		scanf("%d", &unit);
@@ -844,6 +970,10 @@ void menuLaptop (void){
 // Deskripsi      : berfungsi untuk memberikan rekomendasi laptop        //
 //                  untuk pengguna                                       //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void rekomendasiLaptop (void){
 	
@@ -851,18 +981,15 @@ void rekomendasiLaptop (void){
     system("cls");
 	printf("\n\n");
 	header(); 
-    printf("\t\t\t +----------------------------------------------------------------------+\n");
-    printf("\t\t\t |                   Silahkan pilih penggunaan laptop                   |\n");
-    printf("\t\t\t +---+------------------------------------------------------------------+\n");
-    printf("\t\t\t | 1 |  Pelajar SD/SMP/SMA/Kuliah (basic use word, excel, dll.)         |\n");
-    printf("\t\t\t |---|------------------------------------------------------------------+\n");
-    printf("\t\t\t | 2 |  Pelajar SMK (DKV, Multimedia, IT)                               |\n");
-    printf("\t\t\t |---|------------------------------------------------------------------+\n");
-    printf("\t\t\t | 3 |  Content Creator                                                 |\n");
-    printf("\t\t\t |---|------------------------------------------------------------------+\n");
-    printf("\t\t\t | 4 |  Gamer                                                           |\n");
-    printf("\t\t\t +---+------------------------------------------------------------------+\n");
-    printf("\t\t\t | >> Silahkan pilih penggunaan laptop anda : "); 
+    
+	baca=fopen("menuLaptop.txt","r");
+	
+		char data[255];
+		while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t %s", data);
+		}
+		fclose(baca);
     scanf ("%d", &pilih); 
     
     if (pilih==1){
